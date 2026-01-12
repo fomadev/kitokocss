@@ -1,0 +1,76 @@
+// ============================================
+// KitokoCSS v1.1 - Breadcrumb Component
+// ============================================
+
+.kt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0.75rem 0;
+  margin: 0;
+  font-size: 0.95rem;
+
+  .kt-breadcrumb-item {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: $kt-primary;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: darken($kt-primary, 10%);
+        text-decoration: underline;
+      }
+    }
+
+    &.kt-active {
+      color: $kt-text-muted;
+      cursor: default;
+    }
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-left: 0.5rem;
+      color: $kt-border-color;
+    }
+  }
+}
+
+// Variante avec icônes
+.kt-breadcrumb-icon {
+  .kt-breadcrumb-item {
+    gap: 0.25rem;
+
+    &::before {
+      content: '›';
+      margin: 0 0.5rem;
+      color: $kt-border-color;
+    }
+
+    &:first-child::before {
+      content: '';
+      margin: 0;
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      margin-left: 0;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 576px) {
+  .kt-breadcrumb {
+    font-size: 0.875rem;
+
+    .kt-breadcrumb-item {
+      &:not(:last-child)::after {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}

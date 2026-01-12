@@ -1,0 +1,101 @@
+// ============================================
+// KitokoCSS v1.1 - Accordion Component
+// ============================================
+
+.kt-accordion {
+  border: 1px solid $kt-border-color;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .kt-accordion-item {
+    border-bottom: 1px solid $kt-border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .kt-accordion-header {
+      padding: 1rem 1.5rem;
+      background: $kt-bg-secondary;
+      cursor: pointer;
+      font-weight: 600;
+      color: $kt-text-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      border: none;
+      width: 100%;
+      text-align: left;
+
+      &:hover {
+        background: rgba($kt-primary, 0.05);
+        color: $kt-primary;
+      }
+
+      .kt-accordion-toggle {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 1.25rem;
+        line-height: 1;
+
+        &.kt-expanded {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .kt-accordion-body {
+      padding: 1rem 1.5rem;
+      background: $kt-white;
+      display: none;
+      animation: slideDown 0.3s ease;
+
+      &.kt-active {
+        display: block;
+      }
+    }
+
+    &.kt-active {
+      .kt-accordion-header {
+        background: rgba($kt-primary, 0.1);
+        color: $kt-primary;
+      }
+    }
+  }
+}
+
+// Variante sans bordures
+.kt-accordion-flush {
+  border: none;
+
+  .kt-accordion-item {
+    border-bottom: 1px solid $kt-border-color;
+
+    .kt-accordion-header {
+      background: transparent;
+      padding: 1rem 0;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    .kt-accordion-body {
+      background: transparent;
+      padding: 1rem 0;
+    }
+  }
+}
+
+// Animation pour le slide
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

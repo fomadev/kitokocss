@@ -1,0 +1,98 @@
+// ============================================
+// KitokoCSS v1.1 - Tabs Component
+// ============================================
+
+.kt-tabs {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid $kt-border-color;
+
+  .kt-tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: -2px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .kt-tab-link {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid transparent;
+      border-bottom: none;
+      background: transparent;
+      color: $kt-text-muted;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 4px 4px 0 0;
+
+      &:hover {
+        color: $kt-primary;
+        background: rgba($kt-primary, 0.05);
+      }
+
+      &.kt-active {
+        color: $kt-primary;
+        border-color: $kt-border-color;
+        border-bottom-color: $kt-white;
+        background: $kt-white;
+      }
+    }
+  }
+
+  .kt-tabs-content {
+    padding: 1.5rem;
+    animation: fadeIn 0.3s ease;
+
+    .kt-tab-pane {
+      display: none;
+
+      &.kt-active {
+        display: block;
+      }
+    }
+  }
+}
+
+// Variantes de Tabs
+.kt-tabs-vertical {
+  flex-direction: row;
+
+  .kt-tabs-nav {
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 2px solid $kt-border-color;
+    min-width: 150px;
+    margin-right: -2px;
+
+    .kt-tab-link {
+      border-radius: 4px 0 0 4px;
+      border-bottom: 2px solid transparent;
+      border-right: none;
+
+      &.kt-active {
+        border-right-color: $kt-white;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+.kt-tabs-pills {
+  .kt-tabs-nav {
+    border-bottom: none;
+
+    .kt-tab-link {
+      border: 2px solid $kt-border-color;
+      border-radius: 20px;
+      background: $kt-bg-secondary;
+
+      &.kt-active {
+        background: $kt-primary;
+        color: $kt-text-light;
+        border-color: $kt-primary;
+      }
+    }
+  }
+}

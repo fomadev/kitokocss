@@ -1,0 +1,130 @@
+// ============================================
+// KitokoCSS v1.1 - Tooltip Component
+// ============================================
+
+.kt-tooltip {
+  position: relative;
+  display: inline-block;
+
+  &[data-tooltip] {
+    cursor: help;
+
+    &::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5rem 0.75rem;
+      background: $kt-dark;
+      color: $kt-text-light;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 115%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: $kt-dark;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+// Positions
+.kt-tooltip-top[data-tooltip] {
+  &::before {
+    bottom: 125%;
+  }
+
+  &::after {
+    bottom: 115%;
+    border-top-color: $kt-dark;
+    border-bottom-color: transparent;
+  }
+}
+
+.kt-tooltip-bottom[data-tooltip] {
+  &::before {
+    bottom: auto;
+    top: 125%;
+  }
+
+  &::after {
+    bottom: auto;
+    top: 115%;
+    border-top-color: transparent;
+    border-bottom-color: $kt-dark;
+  }
+}
+
+.kt-tooltip-left[data-tooltip] {
+  &::before {
+    bottom: 50%;
+    left: auto;
+    right: 125%;
+    transform: translateY(50%);
+  }
+
+  &::after {
+    bottom: 50%;
+    left: auto;
+    right: 115%;
+    transform: translateY(50%);
+    border-top-color: transparent;
+    border-left-color: $kt-dark;
+    border-bottom-color: transparent;
+  }
+}
+
+.kt-tooltip-right[data-tooltip] {
+  &::before {
+    bottom: 50%;
+    left: 125%;
+    transform: translateY(50%);
+  }
+
+  &::after {
+    bottom: 50%;
+    left: 115%;
+    transform: translateY(50%);
+    border-top-color: transparent;
+    border-right-color: $kt-dark;
+    border-bottom-color: transparent;
+  }
+}
+
+// Variantes de couleurs
+@each $name, $color in $kt-theme-colors {
+  .kt-tooltip-#{$name}[data-tooltip] {
+    &::before {
+      background: $color;
+      color: if(lightness($color) > 50%, $kt-dark, $kt-text-light);
+    }
+
+    &::after {
+      border-top-color: $color;
+    }
+
+    &.kt-tooltip-bottom::after {
+      border-bottom-color: $color;
+    }
+  }
+}
