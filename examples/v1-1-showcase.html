@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitokoCSS v1.1 - Showcase des Nouvelles Fonctionnalités</title>
+    <link rel="stylesheet" href="../dist/kitoko.min.css">
+    <style>
+        body {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .showcase-section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .showcase-section h2 {
+            color: #007bff;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+        .code-demo {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="kt-container kt-max-width-lg">
+        <!-- Header -->
+        <div class="kt-text-center kt-mb-5 kt-animate-fade-in">
+            <h1 class="kt-text-4xl kt-text-bold kt-mb-2">KitokoCSS v1.1.0</h1>
+            <p class="kt-text-lg kt-text-muted">Découvrez les nouvelles fonctionnalités amazantes</p>
+        </div>
+
+        <!-- ===== TABS ===== -->
+        <div class="showcase-section kt-animate-slide-in-up">
+            <h2>📑 Composant Tabs</h2>
+            <p>Navigation par onglets interactive et élégante.</p>
+            
+            <div class="kt-tabs">
+                <ul class="kt-tabs-nav">
+                    <li><button class="kt-tab-link kt-active" onclick="switchTab(event, 'tab1')">Aperçu</button></li>
+                    <li><button class="kt-tab-link" onclick="switchTab(event, 'tab2')">Fonctionnalités</button></li>
+                    <li><button class="kt-tab-link" onclick="switchTab(event, 'tab3')">Support</button></li>
+                </ul>
+                <div class="kt-tabs-content">
+                    <div id="tab1" class="kt-tab-pane kt-active">
+                        <p>Les tabs permettent une navigation fluide entre plusieurs sections de contenu. Cliquez sur les onglets pour voir la magie!</p>
+                    </div>
+                    <div id="tab2" class="kt-tab-pane">
+                        <ul>
+                            <li>✨ Animation fluide</li>
+                            <li>🎨 Design moderne</li>
+                            <li>📱 Responsive</li>
+                            <li>♿ Accessible</li>
+                        </ul>
+                    </div>
+                    <div id="tab3" class="kt-tab-pane">
+                        <p>Consultez la documentation complète sur <strong>GitHub</strong> pour plus d'informations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-tabs"&gt;<br>&nbsp;&nbsp;&lt;ul class="kt-tabs-nav"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;button class="kt-tab-link kt-active"&gt;Tab 1&lt;/button&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&lt;/ul&gt;<br>&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== ACCORDION ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-200">
+            <h2>📂 Composant Accordion</h2>
+            <p>Contenu dépliable pour une meilleure organisation de l'information.</p>
+
+            <div class="kt-accordion">
+                <div class="kt-accordion-item">
+                    <button class="kt-accordion-header" onclick="toggleAccordion(event)">
+                        <span>Qu'est-ce que KitokoCSS ?</span>
+                        <span class="kt-accordion-toggle">▼</span>
+                    </button>
+                    <div class="kt-accordion-body">
+                        <p>KitokoCSS est un framework CSS moderne et esthétique conçu pour accélérer votre développement front-end.</p>
+                    </div>
+                </div>
+
+                <div class="kt-accordion-item">
+                    <button class="kt-accordion-header" onclick="toggleAccordion(event)">
+                        <span>Pourquoi KitokoCSS ?</span>
+                        <span class="kt-accordion-toggle">▼</span>
+                    </button>
+                    <div class="kt-accordion-body">
+                        <p>Avec KitokoCSS, vous bénéficiez de composants prêts à l'emploi, d'une grande flexibilité et d'une performance optimale.</p>
+                    </div>
+                </div>
+
+                <div class="kt-accordion-item">
+                    <button class="kt-accordion-header" onclick="toggleAccordion(event)">
+                        <span>Comment démarrer ?</span>
+                        <span class="kt-accordion-toggle">▼</span>
+                    </button>
+                    <div class="kt-accordion-body">
+                        <p>Incluez simplement le CDN dans votre HTML et commencez à utiliser les classes kt-!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-accordion"&gt;<br>&nbsp;&nbsp;&lt;div class="kt-accordion-item"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="kt-accordion-header"&gt;Title&lt;/button&gt;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== BREADCRUMB ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-300">
+            <h2>🗺️ Breadcrumb (Fil d'Ariane)</h2>
+            <p>Montrez le chemin de navigation à vos utilisateurs.</p>
+
+            <nav>
+                <ul class="kt-breadcrumb">
+                    <li class="kt-breadcrumb-item"><a href="#">Accueil</a></li>
+                    <li class="kt-breadcrumb-item"><a href="#">Produits</a></li>
+                    <li class="kt-breadcrumb-item"><a href="#">Électronique</a></li>
+                    <li class="kt-breadcrumb-item kt-active">Téléphones</li>
+                </ul>
+            </nav>
+
+            <div class="code-demo">
+                <code>&lt;ul class="kt-breadcrumb"&gt;<br>&nbsp;&nbsp;&lt;li class="kt-breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>&lt;/ul&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== SPINNER ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-300">
+            <h2>⏳ Spinner (Indicateur de Chargement)</h2>
+            <p>Montrez à vos utilisateurs que quelque chose se charge.</p>
+
+            <div class="kt-display-flex kt-gap-4 kt-mt-3 kt-justify-content-center">
+                <div class="kt-spinner"></div>
+                <div class="kt-spinner kt-spinner-sm"></div>
+                <div class="kt-spinner kt-spinner-lg"></div>
+                <div class="kt-spinner kt-spinner-grow kt-spinner-primary"></div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-spinner"&gt;&lt;/div&gt;<br>&lt;div class="kt-spinner kt-spinner-sm"&gt;&lt;/div&gt;<br>&lt;div class="kt-spinner kt-spinner-grow"&gt;&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== SKELETON ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-400">
+            <h2>💀 Skeleton (Placeholder de Chargement)</h2>
+            <p>Créez un effet de chargement élégant.</p>
+
+            <div class="kt-skeleton-group kt-skeleton-list">
+                <div class="kt-skeleton-item">
+                    <div class="kt-skeleton kt-skeleton-avatar"></div>
+                    <div class="kt-skeleton-content">
+                        <div class="kt-skeleton kt-skeleton-text"></div>
+                        <div class="kt-skeleton kt-skeleton-text kt-skeleton-text-sm"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-skeleton kt-skeleton-avatar"&gt;&lt;/div&gt;<br>&lt;div class="kt-skeleton kt-skeleton-text"&gt;&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== TOOLTIP ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>💬 Tooltip (Infobulle)</h2>
+            <p>Ajoutez des infobulles pour clarifier les éléments.</p>
+
+            <div class="kt-display-flex kt-gap-3 kt-flex-wrap">
+                <span class="kt-tooltip kt-tooltip-top" data-tooltip="Infobulle en haut">
+                    <button class="kt-btn kt-btn-primary">Hover moi ↑</button>
+                </span>
+                <span class="kt-tooltip kt-tooltip-right" data-tooltip="Infobulle à droite">
+                    <button class="kt-btn kt-btn-secondary">Hover moi →</button>
+                </span>
+                <span class="kt-tooltip kt-tooltip-bottom" data-tooltip="Infobulle en bas">
+                    <button class="kt-btn kt-btn-success">Hover moi ↓</button>
+                </span>
+                <span class="kt-tooltip kt-tooltip-left" data-tooltip="Infobulle à gauche">
+                    <button class="kt-btn kt-btn-danger">Hover moi ←</button>
+                </span>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;span class="kt-tooltip kt-tooltip-top" data-tooltip="Message"&gt;<br>&nbsp;&nbsp;&lt;button&gt;Hover me&lt;/button&gt;<br>&lt;/span&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== ANIMATIONS ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>✨ Animations et Transitions</h2>
+            <p>Créez des animations fluides facilement.</p>
+
+            <div class="kt-display-grid kt-grid-cols-3 kt-gap-3 kt-mt-3">
+                <div class="kt-p-3 kt-bg-primary kt-text-light kt-text-center kt-rounded kt-animate-fade-in kt-hover-lift">
+                    fadeIn
+                </div>
+                <div class="kt-p-3 kt-bg-success kt-text-light kt-text-center kt-rounded kt-animate-slide-in-up kt-hover-lift">
+                    slideInUp
+                </div>
+                <div class="kt-p-3 kt-bg-danger kt-text-light kt-text-center kt-rounded kt-animate-bounce kt-hover-lift">
+                    bounce
+                </div>
+                <div class="kt-p-3 kt-bg-warning kt-text-dark kt-text-center kt-rounded kt-animate-pulse kt-hover-lift">
+                    pulse
+                </div>
+                <div class="kt-p-3 kt-bg-info kt-text-light kt-text-center kt-rounded kt-animate-zoom-in kt-hover-lift">
+                    zoomIn
+                </div>
+                <div class="kt-p-3 kt-bg-secondary kt-text-light kt-text-center kt-rounded kt-animate-heartbeat kt-hover-lift">
+                    heartbeat
+                </div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-animate-fade-in"&gt;Content&lt;/div&gt;<br>&lt;div class="kt-animate-slide-in-up"&gt;Content&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== HOVER EFFECTS ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>🎯 Effets Hover</h2>
+            <p>Rendez vos éléments interactifs avec des effets au survol.</p>
+
+            <div class="kt-display-grid kt-grid-cols-3 kt-gap-3 kt-mt-3">
+                <div class="kt-p-3 kt-bg-light kt-text-center kt-rounded kt-border kt-hover-lift kt-transition-all">
+                    Lift
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-text-center kt-rounded kt-border kt-hover-scale kt-transition-all">
+                    Scale
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-text-center kt-rounded kt-border kt-hover-glow kt-transition-all">
+                    Glow
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-text-center kt-rounded kt-border kt-hover-shadow kt-transition-all">
+                    Shadow
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-text-center kt-rounded kt-border kt-hover-zoom kt-transition-all">
+                    Zoom
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-text-center kt-rounded kt-border kt-hover-rotate kt-transition-all">
+                    Rotate
+                </div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-hover-lift kt-transition-all"&gt;Hover&lt;/div&gt;<br>&lt;div class="kt-hover-scale"&gt;Me&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== GRADIENTS ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>🌈 Gradients</h2>
+            <p>Colorez vos éléments avec des gradients élégants.</p>
+
+            <div class="kt-display-grid kt-grid-cols-3 kt-gap-3 kt-mt-3">
+                <div class="kt-p-4 kt-bg-gradient-primary kt-text-light kt-rounded kt-text-center kt-text-bold">
+                    Primary
+                </div>
+                <div class="kt-p-4 kt-bg-gradient-success kt-text-light kt-rounded kt-text-center kt-text-bold">
+                    Success
+                </div>
+                <div class="kt-p-4 kt-bg-gradient-danger kt-text-light kt-rounded kt-text-center kt-text-bold">
+                    Danger
+                </div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-bg-gradient-primary"&gt;Content&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- ===== OPACITY ===== -->
+        <div class="showcase-section kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>👻 Opacité</h2>
+            <p>Contrôlez la transparence avec les classes d'opacité.</p>
+
+            <div class="kt-display-flex kt-gap-2 kt-mt-3 kt-flex-wrap">
+                <div class="kt-p-2 kt-bg-primary kt-opacity-10 kt-rounded" title="Opacity 10">10%</div>
+                <div class="kt-p-2 kt-bg-primary kt-opacity-30 kt-rounded" title="Opacity 30">30%</div>
+                <div class="kt-p-2 kt-bg-primary kt-opacity-50 kt-rounded" title="Opacity 50">50%</div>
+                <div class="kt-p-2 kt-bg-primary kt-opacity-70 kt-rounded" title="Opacity 70">70%</div>
+                <div class="kt-p-2 kt-bg-primary kt-opacity-100 kt-rounded" title="Opacity 100">100%</div>
+            </div>
+
+            <div class="code-demo">
+                <code>&lt;div class="kt-opacity-50"&gt;Content&lt;/div&gt;</code>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="kt-text-center kt-mt-5 kt-mb-5 kt-p-4 kt-bg-light kt-rounded kt-border">
+            <h3>🎉 Prêt à utiliser KitokoCSS ?</h3>
+            <p class="kt-text-muted">Incluez le CDN dans votre projet et commencez à créer des interfaces magnifiques !</p>
+            <p class="kt-text-sm kt-text-muted">
+                <code>https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.min.css</code>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabId) {
+            const tabs = document.querySelectorAll('.kt-tab-pane');
+            const links = document.querySelectorAll('.kt-tab-link');
+            
+            tabs.forEach(tab => tab.classList.remove('kt-active'));
+            links.forEach(link => link.classList.remove('kt-active'));
+            
+            document.getElementById(tabId).classList.add('kt-active');
+            event.target.classList.add('kt-active');
+        }
+
+        function toggleAccordion(event) {
+            const item = event.target.closest('.kt-accordion-item');
+            const body = item.querySelector('.kt-accordion-body');
+            const toggle = item.querySelector('.kt-accordion-toggle');
+            
+            const isActive = body.classList.contains('kt-active');
+            
+            document.querySelectorAll('.kt-accordion-body').forEach(b => b.classList.remove('kt-active'));
+            document.querySelectorAll('.kt-accordion-toggle').forEach(t => t.classList.remove('kt-expanded'));
+            
+            if (!isActive) {
+                body.classList.add('kt-active');
+                toggle.classList.add('kt-expanded');
+            }
+        }
+    </script>
+</body>
+</html>

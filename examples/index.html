@@ -3,9 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemples KitokoCSS - Templates et Démonstrations</title>
+    <title>Exemples KitokoCSS v1.1 - Templates et Démonstrations</title>
     <link rel="icon" type="image/png" href="../logo-trans.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.0.0/dist/kitoko.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        .examples-header {
+            text-align: center;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        .examples-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .examples-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .example-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .example-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .example-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        .example-card-body {
+            padding: 1.5rem;
+        }
+        .example-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #212529;
+        }
+        .example-card-description {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .example-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: #e9ecef;
+            color: #495057;
+        }
+        .badge-new {
+            background: #d4edda;
+            color: #155724;
+        }
+        .section-title {
+            color: white;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="examples-header">
+        <div class="version-badge">KitokoCSS v1.1.0 - Janvier 2026</div>
+        <h1>🎨 Exemples KitokoCSS</h1>
+        <p>Templates et démonstrations pour tous les composants et utilitaires</p>
+    </div>
+
+    <!-- Section v1.1.0 NEW -->
+    <h2 class="section-title">✨ Nouveautés v1.1.0</h2>
+    <div class="examples-grid">
+        <!-- Showcase v1.1 -->
+        <a href="./v1-1-showcase.html" class="example-card">
+            <div class="example-card-image">🎬</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Showcase v1.1</div>
+                <div class="example-card-description">
+                    Découvrez tous les nouveaux composants et utilitaires de v1.1.0 en action.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge badge-new">NEW</span>
+                    <span class="badge">Tabs</span>
+                    <span class="badge">Accordion</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Animations & Transitions -->
+        <a href="./animations-transitions.html" class="example-card">
+            <div class="example-card-image">✨</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Animations</div>
+                <div class="example-card-description">
+                    Démonstration complète de toutes les animations CSS et transitions fluides.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge badge-new">NEW</span>
+                    <span class="badge">Animations</span>
+                    <span class="badge">Transitions</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Section v1.0.0 Templates -->
+    <h2 class="section-title">🎯 Templates Complets v1.0</h2>
+    <div class="examples-grid">
+        <!-- Dashboard -->
+        <a href="./dashboard.html" class="example-card">
+            <div class="example-card-image">📊</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Dashboard</div>
+                <div class="example-card-description">
+                    Un tableau de bord complet avec cartes, graphiques et statistiques.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge">Cards</span>
+                    <span class="badge">Grid</span>
+                    <span class="badge">Responsive</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Landing Page -->
+        <a href="./landing-page.html" class="example-card">
+            <div class="example-card-image">🚀</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Landing Page</div>
+                <div class="example-card-description">
+                    Page d'accueil moderne avec héros, fonctionnalités et appel à l'action.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge">Navbar</span>
+                    <span class="badge">Buttons</span>
+                    <span class="badge">Typography</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Blog Article -->
+        <a href="./blog-article.html" class="example-card">
+            <div class="example-card-image">📝</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Blog Article</div>
+                <div class="example-card-description">
+                    Article de blog avec titre, contenu formaté et commentaires.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge">Typography</span>
+                    <span class="badge">Images</span>
+                    <span class="badge">Cards</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- E-commerce Product -->
+        <a href="./e-commerce-product.html" class="example-card">
+            <div class="example-card-image">🛍️</div>
+            <div class="example-card-body">
+                <div class="example-card-title">E-commerce Product</div>
+                <div class="example-card-description">
+                    Page produit e-commerce complète avec images, prix et avis clients.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge">Badges</span>
+                    <span class="badge">Buttons</span>
+                    <span class="badge">Alerts</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Portfolio -->
+        <a href="./portfolio.html" class="example-card">
+            <div class="example-card-image">💼</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Portfolio</div>
+                <div class="example-card-description">
+                    Portfolio personnel avec projets, compétences et formulaire de contact.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge">Cards</span>
+                    <span class="badge">Grid</span>
+                    <span class="badge">Forms</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Contact Form -->
+        <a href="./contact.html" class="example-card">
+            <div class="example-card-image">📧</div>
+            <div class="example-card-body">
+                <div class="example-card-title">Contact Page</div>
+                <div class="example-card-description">
+                    Page de contact avec formulaire, validation et éléments interactifs.
+                </div>
+                <div class="example-card-tags">
+                    <span class="badge">Forms</span>
+                    <span class="badge">Inputs</span>
+                    <span class="badge">Buttons</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; color: white; margin-top: 4rem; padding: 2rem;">
+        <p>KitokoCSS v1.1.0 • Créé avec ❤️ par FomaDev</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">
+            <a href="../README.md" style="color: inherit; text-decoration: none;">← Retour au README</a>
+        </p>
+    </div>
+</body>
+</html>
     <style>
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

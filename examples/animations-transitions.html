@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitokoCSS v1.1 - Animations & Transitions</title>
+    <link rel="stylesheet" href="../dist/kitoko.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .demo-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 0.6s ease;
+        }
+        .demo-container h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .demo-box {
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        .title {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease;
+        }
+        .title h1 {
+            font-size: 3rem;
+            margin: 0 0 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .title p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="kt-container kt-max-width-xl">
+        <!-- Header -->
+        <div class="title kt-animate-fade-in">
+            <h1>🎬 Animations & Transitions</h1>
+            <p>Découvrez la puissance des animations CSS modernes</p>
+        </div>
+
+        <!-- ===== ANIMATIONS DE BASE ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-100">
+            <h2>✨ Animations de Base</h2>
+            <div class="demo-grid">
+                <div class="demo-box kt-animate-fade-in">Fade In</div>
+                <div class="demo-box kt-animate-fade-out">Fade Out</div>
+                <div class="demo-box kt-animate-slide-in-left">Slide Left</div>
+                <div class="demo-box kt-animate-slide-in-right">Slide Right</div>
+                <div class="demo-box kt-animate-slide-in-up">Slide Up</div>
+                <div class="demo-box kt-animate-slide-in-down">Slide Down</div>
+                <div class="demo-box kt-animate-zoom-in">Zoom In</div>
+                <div class="demo-box kt-animate-bounce">Bounce</div>
+                <div class="demo-box kt-animate-pulse">Pulse</div>
+                <div class="demo-box kt-animate-heartbeat">Heartbeat</div>
+            </div>
+        </div>
+
+        <!-- ===== DÉLAIS D'ANIMATION ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-200">
+            <h2>⏱️ Délais d'Animation</h2>
+            <p class="kt-text-muted">Chaque boîte apparaît avec un délai différent</p>
+            <div class="demo-grid">
+                <div class="demo-box kt-animate-slide-in-up">Délai 0ms</div>
+                <div class="demo-box kt-animate-slide-in-up kt-animate-delay-100">Délai 100ms</div>
+                <div class="demo-box kt-animate-slide-in-up kt-animate-delay-200">Délai 200ms</div>
+                <div class="demo-box kt-animate-slide-in-up kt-animate-delay-300">Délai 300ms</div>
+                <div class="demo-box kt-animate-slide-in-up kt-animate-delay-500">Délai 500ms</div>
+            </div>
+        </div>
+
+        <!-- ===== DURÉES D'ANIMATION ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-300">
+            <h2>⏳ Durées d'Animation</h2>
+            <p class="kt-text-muted">Chaque boîte pulse avec une durée différente</p>
+            <div class="demo-grid">
+                <div class="demo-box kt-animate-pulse kt-animate-duration-300">300ms</div>
+                <div class="demo-box kt-animate-pulse kt-animate-duration-500">500ms</div>
+                <div class="demo-box kt-animate-pulse kt-animate-duration-1000">1000ms</div>
+            </div>
+        </div>
+
+        <!-- ===== TRANSITIONS COMPLEXES ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-400">
+            <h2>🔄 Transitions Complexes</h2>
+            <p class="kt-text-muted">Survolez les boîtes pour voir les transitions</p>
+            <div class="demo-grid">
+                <div class="demo-box kt-transition-all kt-hover-lift">Lift</div>
+                <div class="demo-box kt-transition-all kt-hover-glow">Glow</div>
+                <div class="demo-box kt-transition-transform kt-hover-scale">Scale</div>
+                <div class="demo-box kt-transition-transform kt-hover-rotate">Rotate</div>
+                <div class="demo-box kt-transition-opacity kt-hover-opacity">Opacity</div>
+                <div class="demo-box kt-transition-shadow kt-hover-shadow-lg">Shadow</div>
+                <div class="demo-box kt-transition-all kt-hover-zoom">Zoom</div>
+                <div class="demo-box kt-transition-all kt-hover-zoom-sm">Zoom SM</div>
+                <div class="demo-box kt-transition-all kt-hover-brightness">Brightness</div>
+                <div class="demo-box kt-transition-all kt-hover-translate-y-2">Lift 2</div>
+            </div>
+        </div>
+
+        <!-- ===== COMBINAISONS ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>🎯 Combinaisons Sophistiquées</h2>
+            <p class="kt-text-muted">Animations + Transitions + Hover Effects</p>
+            
+            <div class="kt-grid kt-grid-cols-3 kt-gap-4 kt-mt-3">
+                <!-- Card 1 -->
+                <div class="kt-card kt-animate-slide-in-left kt-hover-lift kt-transition-all" 
+                     style="cursor: pointer; overflow: hidden;">
+                    <div class="kt-card-body kt-bg-gradient-primary kt-text-light" 
+                         style="padding: 2rem 1rem; text-align: center;">
+                        <h4 class="kt-text-xl kt-text-bold">Card 1</h4>
+                        <p class="kt-opacity-80">Glissez depuis la gauche</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="kt-card kt-animate-fade-in kt-hover-glow kt-transition-shadow" 
+                     style="cursor: pointer;">
+                    <div class="kt-card-body kt-bg-gradient-success kt-text-light" 
+                         style="padding: 2rem 1rem; text-align: center;">
+                        <h4 class="kt-text-xl kt-text-bold">Card 2</h4>
+                        <p class="kt-opacity-80">Brillez au survol</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="kt-card kt-animate-slide-in-right kt-hover-scale kt-transition-transform" 
+                     style="cursor: pointer;">
+                    <div class="kt-card-body kt-bg-gradient-danger kt-text-light" 
+                         style="padding: 2rem 1rem; text-align: center;">
+                        <h4 class="kt-text-xl kt-text-bold">Card 3</h4>
+                        <p class="kt-opacity-80">Agrandissez au survol</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PATTERN STAGGER ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>📊 Pattern Stagger (Cascade)</h2>
+            <p class="kt-text-muted">Chaque élément apparaît avec un délai croissant pour un effet en cascade</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                <div class="kt-p-3 kt-bg-light kt-rounded kt-animate-fade-in kt-animate-delay-100">
+                    <span class="kt-text-bold">Élément 1</span>
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-rounded kt-animate-fade-in kt-animate-delay-200">
+                    <span class="kt-text-bold">Élément 2</span>
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-rounded kt-animate-fade-in kt-animate-delay-300">
+                    <span class="kt-text-bold">Élément 3</span>
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-rounded kt-animate-fade-in kt-animate-delay-500">
+                    <span class="kt-text-bold">Élément 4</span>
+                </div>
+                <div class="kt-p-3 kt-bg-light kt-rounded kt-animate-fade-in kt-animate-delay-500">
+                    <span class="kt-text-bold">Élément 5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TIMING FUNCTIONS ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>⚙️ Timing Functions (Fonctions d'Animation)</h2>
+            <p class="kt-text-muted">Différentes courbes de timing pour différents effets</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box kt-animate-bounce kt-transition-ease-in">Ease In</div>
+                <div class="demo-box kt-animate-bounce kt-transition-ease-out">Ease Out</div>
+                <div class="demo-box kt-animate-bounce kt-transition-ease-in-out">Ease In Out</div>
+                <div class="demo-box kt-animate-bounce kt-transition-linear">Linear</div>
+            </div>
+        </div>
+
+        <!-- ===== OPACITÉ ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>👻 Opacité Animée</h2>
+            <p class="kt-text-muted">Contrôlez l'opacité de manière fluide</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box kt-animate-pulse kt-opacity-20">20%</div>
+                <div class="demo-box kt-animate-pulse kt-opacity-40">40%</div>
+                <div class="demo-box kt-animate-pulse kt-opacity-60">60%</div>
+                <div class="demo-box kt-animate-pulse kt-opacity-80">80%</div>
+                <div class="demo-box kt-animate-pulse kt-opacity-100">100%</div>
+            </div>
+        </div>
+
+        <!-- ===== DÉGRADÉS ANIMÉS ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>🌈 Dégradés</h2>
+            <p class="kt-text-muted">Dégradés élégants et modernes</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box kt-bg-gradient-primary">Primary</div>
+                <div class="demo-box kt-bg-gradient-success">Success</div>
+                <div class="demo-box kt-bg-gradient-danger">Danger</div>
+                <div class="demo-box kt-bg-gradient-warning">Warning</div>
+                <div class="demo-box kt-bg-gradient-info">Info</div>
+                <div class="demo-box kt-bg-gradient-secondary">Secondary</div>
+            </div>
+        </div>
+
+        <!-- ===== BUTTON SHOWCASE ===== -->
+        <div class="demo-container kt-animate-slide-in-up kt-animate-delay-500">
+            <h2>🎯 Boutons Animés</h2>
+            <p class="kt-text-muted">Boutons avec effets au survol élégants</p>
+            
+            <div class="kt-display-flex kt-gap-2 kt-flex-wrap kt-mt-3">
+                <button class="kt-btn kt-btn-primary kt-hover-lift kt-transition-all">
+                    Lift
+                </button>
+                <button class="kt-btn kt-btn-success kt-hover-glow kt-transition-shadow">
+                    Glow
+                </button>
+                <button class="kt-btn kt-btn-danger kt-hover-scale kt-transition-transform">
+                    Scale
+                </button>
+                <button class="kt-btn kt-btn-warning kt-hover-rotate kt-transition-transform">
+                    Rotate
+                </button>
+                <button class="kt-btn kt-btn-info kt-hover-brightness kt-transition-all">
+                    Brightness
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="kt-text-center kt-mt-5 kt-mb-3 kt-p-4 kt-text-light kt-animate-fade-in kt-animate-delay-500">
+            <h3>🚀 Prêt à animer votre site ?</h3>
+            <p>KitokoCSS rend l'animation CSS facile et amusante !</p>
+        </div>
+    </div>
+
+    <script>
+        // Vous pouvez ajouter des interactions JavaScript ici si nécessaire
+        console.log('Animations v1.1.0 loaded!');
+    </script>
+</body>
+</html>
