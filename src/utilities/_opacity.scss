@@ -1,0 +1,69 @@
+// ============================================
+// KitokoCSS v1.1 - Opacity Utilities
+// ============================================
+
+.kt-opacity-0 {
+  opacity: 0;
+}
+
+.kt-opacity-10 {
+  opacity: 0.1;
+}
+
+.kt-opacity-20 {
+  opacity: 0.2;
+}
+
+.kt-opacity-30 {
+  opacity: 0.3;
+}
+
+.kt-opacity-40 {
+  opacity: 0.4;
+}
+
+.kt-opacity-50 {
+  opacity: 0.5;
+}
+
+.kt-opacity-60 {
+  opacity: 0.6;
+}
+
+.kt-opacity-70 {
+  opacity: 0.7;
+}
+
+.kt-opacity-80 {
+  opacity: 0.8;
+}
+
+.kt-opacity-90 {
+  opacity: 0.9;
+}
+
+.kt-opacity-100 {
+  opacity: 1;
+}
+
+// Hover opacity
+.kt-hover-opacity-50 {
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.kt-hover-opacity-75 {
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// Groupe d'opacité
+.kt-group-hover\:opacity-75:hover .kt-group-hover\:opacity-75\:child {
+  opacity: 0.75;
+}

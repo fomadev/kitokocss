@@ -1,0 +1,95 @@
+// ============================================
+// KitokoCSS v1.1 - Gradients Utilities
+// ============================================
+
+// Gradients de base
+.kt-bg-gradient-primary {
+  background: linear-gradient(135deg, $kt-primary 0%, darken($kt-primary, 10%) 100%);
+}
+
+.kt-bg-gradient-secondary {
+  background: linear-gradient(135deg, $kt-secondary 0%, darken($kt-secondary, 10%) 100%);
+}
+
+.kt-bg-gradient-success {
+  background: linear-gradient(135deg, $kt-success 0%, darken($kt-success, 10%) 100%);
+}
+
+.kt-bg-gradient-danger {
+  background: linear-gradient(135deg, $kt-danger 0%, darken($kt-danger, 10%) 100%);
+}
+
+.kt-bg-gradient-warning {
+  background: linear-gradient(135deg, $kt-warning 0%, darken($kt-warning, 10%) 100%);
+}
+
+.kt-bg-gradient-info {
+  background: linear-gradient(135deg, $kt-info 0%, darken($kt-info, 10%) 100%);
+}
+
+// Gradients directionnels
+.kt-gradient-to-right {
+  background: linear-gradient(90deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.kt-gradient-to-left {
+  background: linear-gradient(270deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.kt-gradient-to-bottom {
+  background: linear-gradient(180deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.kt-gradient-to-top {
+  background: linear-gradient(0deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.kt-gradient-to-br {
+  background: linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.kt-gradient-to-tl {
+  background: linear-gradient(315deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+// Gradients radiaux
+.kt-gradient-radial {
+  background: radial-gradient(circle, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+// Variantes de dégradé avec couleurs sémantiques
+@each $name, $color in $kt-theme-colors {
+  .kt-gradient-from-#{$name} {
+    --gradient-from: #{$color};
+  }
+
+  .kt-gradient-to-#{$name} {
+    --gradient-to: #{$color};
+  }
+
+  .kt-gradient-via-#{$name} {
+    background: linear-gradient(
+      var(--gradient-angle, 90deg),
+      var(--gradient-from) 0%,
+      #{$color} 50%,
+      var(--gradient-to) 100%
+    );
+  }
+}
+
+// Angles de dégradé
+.kt-gradient-angle-45 {
+  --gradient-angle: 45deg;
+}
+
+.kt-gradient-angle-90 {
+  --gradient-angle: 90deg;
+}
+
+.kt-gradient-angle-135 {
+  --gradient-angle: 135deg;
+}
+
+.kt-gradient-angle-180 {
+  --gradient-angle: 180deg;
+}

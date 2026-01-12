@@ -1,0 +1,204 @@
+// ============================================
+// KitokoCSS v1.1 - Hover Effects Utilities
+// ============================================
+
+// Effets d'ombre au survol
+.kt-hover-shadow {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.kt-hover-shadow-sm {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.kt-hover-shadow-lg {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.kt-hover-shadow-xl {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// Effets de bordure au survol
+.kt-hover-border-primary {
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: $kt-primary;
+  }
+}
+
+.kt-hover-border-secondary {
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: $kt-secondary;
+  }
+}
+
+// Couleurs de texte au survol
+.kt-hover-text-primary {
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $kt-primary;
+  }
+}
+
+.kt-hover-text-secondary {
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $kt-secondary;
+  }
+}
+
+// Couleurs de fond au survol
+.kt-hover-bg-primary {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $kt-primary;
+  }
+}
+
+.kt-hover-bg-secondary {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $kt-secondary;
+  }
+}
+
+// Transformation au survol
+.kt-hover-translate-y-1 {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.kt-hover-translate-y-2 {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+.kt-hover-translate-y-neg-1 {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(4px);
+  }
+}
+
+// Zoom au survol
+.kt-hover-zoom {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.kt-hover-zoom-sm {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.kt-hover-zoom-out {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
+// Rotation au survol
+.kt-hover-rotate-1 {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(2deg);
+  }
+}
+
+.kt-hover-rotate-neg-1 {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(-2deg);
+  }
+}
+
+// Teinte au survol
+.kt-hover-brightness {
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.kt-hover-brightness-less {
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.kt-hover-grayscale {
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: grayscale(100%);
+  }
+}
+
+// Cursor
+.kt-cursor-pointer {
+  cursor: pointer;
+}
+
+.kt-cursor-default {
+  cursor: default;
+}
+
+.kt-cursor-text {
+  cursor: text;
+}
+
+.kt-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.kt-cursor-help {
+  cursor: help;
+}
+
+.kt-cursor-move {
+  cursor: move;
+}

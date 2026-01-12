@@ -1,0 +1,173 @@
+// ============================================
+// KitokoCSS v1.1 - Typography Advanced
+// ============================================
+
+// Texte tronqué
+.kt-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kt-text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.kt-text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Cas du texte
+.kt-text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kt-text-lowercase {
+  text-transform: lowercase;
+}
+
+.kt-text-capitalize {
+  text-transform: capitalize;
+}
+
+// Alignement du texte
+.kt-text-left {
+  text-align: left;
+}
+
+.kt-text-center {
+  text-align: center;
+}
+
+.kt-text-right {
+  text-align: right;
+}
+
+.kt-text-justify {
+  text-align: justify;
+}
+
+// Poids du texte
+.kt-text-light {
+  font-weight: $kt-font-weight-light;
+}
+
+.kt-text-normal {
+  font-weight: $kt-font-weight-normal;
+}
+
+.kt-text-medium {
+  font-weight: $kt-font-weight-medium;
+}
+
+.kt-text-semibold {
+  font-weight: $kt-font-weight-semibold;
+}
+
+.kt-text-bold {
+  font-weight: $kt-font-weight-bold;
+}
+
+// Style du texte
+.kt-text-italic {
+  font-style: italic;
+}
+
+.kt-text-oblique {
+  font-style: oblique;
+}
+
+.kt-text-underline {
+  text-decoration: underline;
+}
+
+.kt-text-line-through {
+  text-decoration: line-through;
+}
+
+// Hauteur de ligne
+.kt-text-line-sm {
+  line-height: $kt-line-height-sm;
+}
+
+.kt-text-line-base {
+  line-height: $kt-line-height-base;
+}
+
+.kt-text-line-lg {
+  line-height: $kt-line-height-lg;
+}
+
+.kt-text-line-tight {
+  line-height: 1;
+}
+
+// Tailles de texte
+.kt-text-xs {
+  font-size: 0.75rem;
+}
+
+.kt-text-sm {
+  font-size: $kt-font-size-sm;
+}
+
+.kt-text-base {
+  font-size: $kt-font-size-base;
+}
+
+.kt-text-lg {
+  font-size: $kt-font-size-lg;
+}
+
+.kt-text-xl {
+  font-size: $kt-font-size-xl;
+}
+
+.kt-text-2xl {
+  font-size: 2.25rem;
+}
+
+.kt-text-3xl {
+  font-size: 3rem;
+}
+
+.kt-text-4xl {
+  font-size: 3.75rem;
+}
+
+// Lettrage
+.kt-tracking-tight {
+  letter-spacing: -0.02em;
+}
+
+.kt-tracking-normal {
+  letter-spacing: 0;
+}
+
+.kt-tracking-wide {
+  letter-spacing: 0.05em;
+}
+
+.kt-tracking-wider {
+  letter-spacing: 0.1em;
+}
+
+// Nowrap et word-break
+.kt-text-nowrap {
+  white-space: nowrap;
+}
+
+.kt-text-break {
+  word-break: break-word;
+}
+
+.kt-text-break-all {
+  word-break: break-all;
+}
