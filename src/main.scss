@@ -1,5 +1,5 @@
 // ============================================
-// KitokoCSS v1.0 - Fichier Principal
+// KitokoCSS v1.1 - Fichier Principal
 // ============================================
 
 // --- Configuration ---
@@ -17,7 +17,7 @@
 // --- Layout ---
 @import 'layout/grid';
 
-// --- Composants ---
+// --- Composants (v1.0) ---
 @import 'components/button';
 @import 'components/card';
 @import 'components/alert';
@@ -30,11 +30,27 @@
 @import 'components/carousel';
 @import 'components/toast';
 
-// --- Utilitaires ---
+// --- Composants (v1.1 NEW) ---
+@import 'components/tabs';
+@import 'components/accordion';
+@import 'components/breadcrumb';
+@import 'components/spinner';
+@import 'components/skeleton';
+@import 'components/tooltip';
+
+// --- Utilitaires (v1.0) ---
 @import 'utilities/spacing';
 @import 'utilities/display';
 @import 'utilities/flexbox';
 @import 'utilities/colors';
 @import 'utilities/borders';
 @import 'utilities/shadows';
+
+// --- Utilitaires (v1.1 NEW) ---
+@import 'utilities/animations';
+@import 'utilities/transitions';
+@import 'utilities/typography-advanced';
+@import 'utilities/gradients';
+@import 'utilities/opacity';
+@import 'utilities/hover-effects';
 
