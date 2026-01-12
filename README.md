@@ -1,6 +1,18 @@
-# KitokoCSS v1.0
+# KitokoCSS v1.1
 
-**KitokoCSS** est un framework CSS moderne, esthétique et hautement performant, conçu pour accélérer le développement front-end sans compromettre le design. Fini les interfaces banales, créez des applications véritablement "Kitoko" (belles).
+**KitokoCSS** est un framework CSS moderne, esthétique, hautement performant et hautement extensible, conçu pour accélérer le développement front-end sans compromettre le design. Fini les interfaces banales, créez des applications véritablement "Kitoko" (belles).
+
+## 🚀 Nouveautés v1.1.0
+
+Découvrez les nouvelles fonctionnalités de cette version :
+
+- **6 nouveaux composants** : Tabs, Accordion, Breadcrumb, Spinner, Skeleton, Tooltip
+- **Animations fluides** : 10+ animations CSS prêtes à l'emploi
+- **Transitions élégantes** : Classes de transition et effets au survol avancés
+- **Gradients modernes** : Support des dégradés directionnels et radiaux
+- **Typographie avancée** : Clamp de texte, lettrage, et bien plus
+- **Utilitaires d'opacité** : Contrôle fin de la transparence
+- **Effets hover** : Transformation, zoom, ombre, et effets visuels
 
 ## Philosophie
 
@@ -8,6 +20,7 @@
 - **Facilité d'Utilisation** : Syntaxe simple et intuitive avec le préfixe `kt-`
 - **Performance** : Code léger, optimisé et modulaire
 - **Responsivité Universelle** : Gestion de tous les breakpoints, du mobile aux écrans 8K
+- **Extensibilité** : Architecture modulaire pour personnalisation facile
 
 ## Installation
 
@@ -15,10 +28,10 @@
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.0.0/dist/kitoko.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.min.css">
 
 <!-- JavaScript (optionnel, pour les composants interactifs) -->
-<script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.0.0/dist/kitoko.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.bundle.min.js"></script>
 ```
 
 ## Démarrage Rapide
@@ -29,19 +42,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KitokoCSS - Démarrage</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.0.0/dist/kitoko.min.css">
+    <title>KitokoCSS v1.1 - Démarrage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.min.css">
 </head>
 <body>
     <div class="kt-container">
-        <h1>Bienvenue dans KitokoCSS</h1>
-        <button class="kt-btn kt-btn-primary">Commencer</button>
+        <h1 class="kt-animate-fade-in">Bienvenue dans KitokoCSS v1.1</h1>
+        <button class="kt-btn kt-btn-primary kt-hover-lift">Commencer</button>
+        
+        <!-- Nouvel exemple Tabs -->
+        <div class="kt-tabs kt-mt-5">
+            <ul class="kt-tabs-nav">
+                <li><button class="kt-tab-link kt-active">Accueil</button></li>
+                <li><button class="kt-tab-link">Fonctionnalités</button></li>
+                <li><button class="kt-tab-link">Contact</button></li>
+            </ul>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.0.0/dist/kitoko.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.bundle.min.js"></script>
 </body>
 </html>
 ```
-
+mis à jour le 12 janvier 2026 pour la version 1.1.0
 ## Documentation
 
 - **[Documentation Complète](https://kitokocss.wuaze.com/docs/index.html)** - Apprenez à utiliser KitokoCSS du début à la fin

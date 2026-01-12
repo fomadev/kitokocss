@@ -1,0 +1,481 @@
+<!-- KitokoCSS v1.1.0 - Comprehensive Documentation -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitokoCSS v1.1.0 - Documentation Complète</title>
+    <style>
+        :root {
+            --primary: #007bff;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0056b3 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .section h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .badge-new {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-updated {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .badge-component {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-utility {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .table th,
+        .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .table th {
+            background: var(--light);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .table tr:hover {
+            background: var(--light);
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .changelog-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+        }
+
+        .changelog-item ul,
+        .changelog-item ol {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .changelog-item li {
+            margin: 0.25rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🎨 KitokoCSS v1.1.0</h1>
+        <p>Framework CSS moderne, esthétique et hautement extensible</p>
+    </div>
+
+    <div class="container">
+        <!-- Version Info -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <span class="version-badge">Version 1.1.0 - Janvier 2026</span>
+        </div>
+
+        <!-- What's New -->
+        <div class="section">
+            <h2>🆕 Nouveautés v1.1.0</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📑 6 Nouveaux Composants</h4>
+                    <p>Tabs, Accordion, Breadcrumb, Spinner, Skeleton, Tooltip</p>
+                </div>
+                <div class="feature-card">
+                    <h4>✨ Animations Fluides</h4>
+                    <p>10+ animations CSS prêtes à l'emploi avec délais et durées</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔄 Transitions Élégantes</h4>
+                    <p>Classes de transition et effets au survol avancés</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌈 Gradients Modernes</h4>
+                    <p>Dégradés directionnels, radiaux et variantes sémantiques</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📝 Typographie Avancée</h4>
+                    <p>Clamp de texte, lettrage, hauteur de ligne et plus</p>
+                </div>
+                <div class="feature-card">
+                    <h4>👻 Opacité & Effets</h4>
+                    <p>Contrôle fin de la transparence et effets hover sophistiqués</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Components -->
+        <div class="section">
+            <h2>📦 Composants (v1.1.0)</h2>
+
+            <h3><span class="badge badge-new">NEW</span> Tabs</h3>
+            <p>Navigation par onglets avec variantes (default, vertical, pills)</p>
+            <div class="code-block">&lt;div class="kt-tabs"&gt;
+    &lt;ul class="kt-tabs-nav"&gt;
+        &lt;li&gt;&lt;button class="kt-tab-link kt-active"&gt;Tab 1&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="kt-tabs-content"&gt;
+        &lt;div class="kt-tab-pane kt-active"&gt;Contenu 1&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+
+            <h3><span class="badge badge-new">NEW</span> Accordion</h3>
+            <p>Contenu dépliable avec animations fluides</p>
+            <div class="code-block">&lt;div class="kt-accordion"&gt;
+    &lt;div class="kt-accordion-item"&gt;
+        &lt;button class="kt-accordion-header"&gt;
+            Titre
+            &lt;span class="kt-accordion-toggle"&gt;▼&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="kt-accordion-body"&gt;Contenu&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+
+            <h3><span class="badge badge-new">NEW</span> Breadcrumb</h3>
+            <p>Fil d'Ariane pour la navigation hiérarchique</p>
+            <div class="code-block">&lt;ul class="kt-breadcrumb"&gt;
+    &lt;li class="kt-breadcrumb-item"&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="kt-breadcrumb-item kt-active"&gt;Page Actuelle&lt;/li&gt;
+&lt;/ul&gt;</div>
+
+            <h3><span class="badge badge-new">NEW</span> Spinner</h3>
+            <p>Indicateurs de chargement avec tailles et couleurs variées</p>
+            <div class="code-block">&lt;div class="kt-spinner"&gt;&lt;/div&gt;
+&lt;div class="kt-spinner kt-spinner-sm"&gt;&lt;/div&gt;
+&lt;div class="kt-spinner kt-spinner-grow kt-spinner-primary"&gt;&lt;/div&gt;</div>
+
+            <h3><span class="badge badge-new">NEW</span> Skeleton</h3>
+            <p>Placeholders de chargement avec animations fluides</p>
+            <div class="code-block">&lt;div class="kt-skeleton kt-skeleton-avatar"&gt;&lt;/div&gt;
+&lt;div class="kt-skeleton kt-skeleton-text"&gt;&lt;/div&gt;
+&lt;div class="kt-skeleton kt-skeleton-image"&gt;&lt;/div&gt;</div>
+
+            <h3><span class="badge badge-new">NEW</span> Tooltip</h3>
+            <p>Infobulles positionnables avec variantes couleur</p>
+            <div class="code-block">&lt;span class="kt-tooltip kt-tooltip-top" data-tooltip="Message"&gt;
+    &lt;button class="kt-btn"&gt;Survolez-moi&lt;/button&gt;
+&lt;/span&gt;</div>
+
+            <h3><span class="badge badge-updated">v1.0</span> Composants Existants</h3>
+            <p>Tous les composants de v1.0 sont maintenus et améliorés :</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Buttons - Boutons avec variantes et états</li>
+                <li>Cards - Cartes avec header, body, footer</li>
+                <li>Alerts - Alertes avec support dismissible</li>
+                <li>Badges - Badges avec variantes pill</li>
+                <li>Forms - Formulaires avec états de validation</li>
+                <li>Navbar - Navigation avec toggler mobile</li>
+                <li>Modals - Fenêtres modales</li>
+                <li>Tables - Tableaux avec variantes</li>
+                <li>Pagination - Navigation de pages</li>
+                <li>Carousel - Carrousels d'images</li>
+                <li>Toast - Notifications de type toast</li>
+            </ul>
+        </div>
+
+        <!-- Utilities -->
+        <div class="section">
+            <h2>🔧 Utilitaires (v1.1.0)</h2>
+
+            <h3><span class="badge badge-new">NEW</span> Animations</h3>
+            <p>Classes d'animation CSS prêtes à l'emploi</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><code>kt-animate-fade-in</code> - Apparition progressive</li>
+                <li><code>kt-animate-slide-in-left</code> - Glissade depuis la gauche</li>
+                <li><code>kt-animate-slide-in-right</code> - Glissade depuis la droite</li>
+                <li><code>kt-animate-slide-in-up</code> - Glissade par le bas</li>
+                <li><code>kt-animate-slide-in-down</code> - Glissade par le haut</li>
+                <li><code>kt-animate-zoom-in</code> - Apparition avec zoom</li>
+                <li><code>kt-animate-bounce</code> - Rebond</li>
+                <li><code>kt-animate-pulse</code> - Pulsation</li>
+                <li><code>kt-animate-heartbeat</code> - Battement de cœur</li>
+            </ul>
+
+            <h3><span class="badge badge-new">NEW</span> Transitions</h3>
+            <p>Classes de transition CSS fluides</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><code>kt-transition-all</code> - Transition de tous les propriétés</li>
+                <li><code>kt-transition-colors</code> - Transition des couleurs</li>
+                <li><code>kt-transition-transform</code> - Transition des transformations</li>
+                <li><code>kt-hover-lift</code> - Liftoff au survol</li>
+                <li><code>kt-hover-glow</code> - Brillance au survol</li>
+                <li><code>kt-hover-scale</code> - Zoom au survol</li>
+                <li><code>kt-hover-shadow</code> - Ombre au survol</li>
+            </ul>
+
+            <h3><span class="badge badge-new">NEW</span> Typography Advanced</h3>
+            <p>Contrôle avancé de la typographie</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><code>kt-text-truncate</code> - Texte tronqué</li>
+                <li><code>kt-text-clamp-2</code> - Limite à 2 lignes</li>
+                <li><code>kt-text-clamp-3</code> - Limite à 3 lignes</li>
+                <li><code>kt-text-uppercase</code> - Majuscules</li>
+                <li><code>kt-text-lowercase</code> - Minuscules</li>
+                <li><code>kt-text-xs</code> à <code>kt-text-4xl</code> - Tailles étendues</li>
+            </ul>
+
+            <h3><span class="badge badge-new">NEW</span> Gradients</h3>
+            <p>Dégradés modernes et élégants</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><code>kt-bg-gradient-primary</code> - Gradient Primary</li>
+                <li><code>kt-bg-gradient-success</code> - Gradient Success</li>
+                <li><code>kt-bg-gradient-danger</code> - Gradient Danger</li>
+                <li><code>kt-gradient-to-right</code> - Dégradé à droite</li>
+                <li><code>kt-gradient-radial</code> - Dégradé radial</li>
+            </ul>
+
+            <h3><span class="badge badge-new">NEW</span> Opacity</h3>
+            <p>Contrôle de l'opacité (0 à 100%)</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><code>kt-opacity-0</code> à <code>kt-opacity-100</code></li>
+                <li><code>kt-hover-opacity-50</code> - Opacité 50% au survol</li>
+            </ul>
+
+            <h3><span class="badge badge-new">NEW</span> Hover Effects</h3>
+            <p>Effets au survol sophistiqués</p>
+            <ul style="margin-left: 1.5rem;">
+                <li>Ombres : <code>kt-hover-shadow</code>, <code>kt-hover-shadow-lg</code></li>
+                <li>Transformations : <code>kt-hover-zoom</code>, <code>kt-hover-rotate</code></li>
+                <li>Filtres : <code>kt-hover-brightness</code>, <code>kt-hover-grayscale</code></li>
+                <li>Cursors : <code>kt-cursor-pointer</code>, <code>kt-cursor-not-allowed</code></li>
+            </ul>
+
+            <h3><span class="badge badge-updated">v1.0</span> Utilitaires Existants</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Spacing - Marges et paddings</li>
+                <li>Display - Classes display</li>
+                <li>Flexbox - Flexbox utilities</li>
+                <li>Colors - Couleurs sémantiques</li>
+                <li>Borders - Bordures et coins arrondis</li>
+                <li>Shadows - Ombres</li>
+            </ul>
+        </div>
+
+        <!-- Changelog -->
+        <div class="section">
+            <h2>📋 Changelog</h2>
+
+            <div class="changelog-item">
+                <h3>v1.1.0 - Janvier 12, 2026</h3>
+                <ul>
+                    <li><strong>6 nouveaux composants</strong> : Tabs, Accordion, Breadcrumb, Spinner, Skeleton, Tooltip</li>
+                    <li><strong>10+ animations CSS</strong> : fadeIn, slide, zoom, bounce, pulse, heartbeat</li>
+                    <li><strong>Transitions élégantes</strong> : Classes de transition avec timing functions</li>
+                    <li><strong>Gradients modernes</strong> : Dégradés directionnels et radiaux</li>
+                    <li><strong>Typographie avancée</strong> : Clamp, lettrage, tailles étendues</li>
+                    <li><strong>Opacité & effets hover</strong> : Contrôle fin et effets sophistiqués</li>
+                    <li><strong>Architecture modulaire</strong> : Complètement extensible et personnalisable</li>
+                </ul>
+            </div>
+
+            <div class="changelog-item">
+                <h3>v1.0.0 - Novembre 27, 2025</h3>
+                <ul>
+                    <li>Framework CSS complet avec 11 composants</li>
+                    <li>Système de grille responsive (12 colonnes, 6 breakpoints)</li>
+                    <li>Classes utilitaires complètes</li>
+                    <li>Support du mode sombre</li>
+                    <li>Documentation complète</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="section">
+            <h2>🚀 Démarrage Rapide</h2>
+
+            <h3>Via CDN</h3>
+            <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;KitokoCSS v1.1&lt;/title&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="kt-container"&gt;
+        &lt;h1 class="kt-animate-fade-in"&gt;Bienvenue !&lt;/h1&gt;
+        &lt;button class="kt-btn kt-btn-primary kt-hover-lift"&gt;Commencer&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+        </div>
+
+        <!-- Links -->
+        <div class="section">
+            <h2>🔗 Ressources</h2>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Documentation</strong> : <a href="./index.html" style="color: var(--primary);">Consultez la doc complète</a></li>
+                <li><strong>Exemples</strong> : <a href="../examples/" style="color: var(--primary);">Voir les exemples</a></li>
+                <li><strong>GitHub</strong> : <a href="https://github.com/fomadev/kitokocss" style="color: var(--primary);">Repository</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025-2026 KitokoCSS - Créé par FomaDev - Licence MIT</p>
+        <p>Rendu avec ❤️ pour rendre vos sites magnifiques</p>
+    </div>
+</body>
+</html>

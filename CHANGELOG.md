@@ -5,6 +5,46 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.1.0] - 2026-01-12
+
+### Ajouté
+
+#### Nouveaux Composants
+- **Tabs** - Navigation par onglets avec variantes (default, vertical, pills)
+- **Accordion** - Contenu dépliable avec support des états expanded/collapsed
+- **Breadcrumb** - Fil d'Ariane pour la navigation hiérarchique
+- **Spinner** - Indicateurs de chargement (border, grow) avec tailles (sm, base, lg)
+- **Skeleton** - Placeholders de chargement avec animations fluides
+- **Tooltip** - Infobulles positionnables (top, bottom, left, right) avec variantes couleur
+
+#### Nouveaux Utilitaires
+- **Animations** - 10 animations CSS (fadeIn, slideIn, zoomIn, bounce, pulse, heartbeat, etc.)
+- **Transitions** - Classes de transition fluides avec timing functions et durées
+- **Hover Effects** - Effets au survol avancés (lift, glow, scale, rotate, opacity, etc.)
+- **Typography Advanced** - Clamp de texte, lettrage, hauteur de ligne, tailles étendues
+- **Gradients** - Dégradés directionnels, radiaux et variantes sémantiques
+- **Opacity** - Contrôle fin de l'opacité (0 à 100%)
+
+#### Améliorations
+- Architecture SCSS complètement modulaire et extensible
+- Support complet des CSS Variables pour personnalisation
+- Animations fluides sur tous les composants interactifs
+- Effets hover uniformes et élégants
+- Classes d'utilitaire supplémentaires pour plus de flexibilité
+- Documentation des codes améliorée
+
+### Modifications
+
+- Titre principal README passe de v1.0 à v1.1
+- Description du framework mise à jour (mention de l'extensibilité)
+- Version dans package.json et VERSION file mise à jour à 1.1.0
+- Tous les liens CDN mis à jour vers v1.1.0
+
+### Documentation
+- Guide amélioré avec exemples des nouveaux composants
+- Exemples HTML mises à jour pour utiliser les nouvelles fonctionnalités
+- Documentation complète des nouvelles classes d'utilitaire
+
 ## [1.0.0] - 2025-11-27
 
 ### Ajouté
