@@ -5,342 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemples KitokoCSS v1.1 - Templates et Démonstrations</title>
     <link rel="icon" type="image/png" href="../logo-trans.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.1.0/dist/kitoko.min.css">
+    <!-- Utilise le build local pour toujours refléter la version du projet -->
+    <link rel="stylesheet" href="../dist/kitoko.min.css">
     <style>
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 2rem 0;
+            padding: 2rem 0 3rem;
         }
         .examples-header {
             text-align: center;
             color: white;
-            padding: 3rem 0;
-            margin-bottom: 3rem;
+            padding: 3rem 0 1rem;
+            margin-bottom: 1.5rem;
         }
         .examples-header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         .examples-header p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
         .version-badge {
             display: inline-block;
             background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .example-card {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .example-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        .example-card-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-        .example-card-body {
-            padding: 1.5rem;
-        }
-        .example-card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #212529;
-        }
-        .example-card-description {
-            color: #6c757d;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .example-card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            background: #e9ecef;
-            color: #495057;
-        }
-        .badge-new {
-            background: #d4edda;
-            color: #155724;
-        }
-        .section-title {
-            color: white;
-            text-align: center;
-            margin: 3rem 0 2rem;
-            font-size: 2rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <div class="examples-header">
-        <div class="version-badge">KitokoCSS v1.1.0 - Janvier 2026</div>
-        <h1>🎨 Exemples KitokoCSS</h1>
-        <p>Templates et démonstrations pour tous les composants et utilitaires</p>
-    </div>
-
-    <!-- Section v1.1.0 NEW -->
-    <h2 class="section-title">✨ Nouveautés v1.1.0</h2>
-    <div class="examples-grid">
-        <!-- Showcase v1.1 -->
-        <a href="./v1-1-showcase.html" class="example-card">
-            <div class="example-card-image">🎬</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Showcase v1.1</div>
-                <div class="example-card-description">
-                    Découvrez tous les nouveaux composants et utilitaires de v1.1.0 en action.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge badge-new">NEW</span>
-                    <span class="badge">Tabs</span>
-                    <span class="badge">Accordion</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Animations & Transitions -->
-        <a href="./animations-transitions.html" class="example-card">
-            <div class="example-card-image">✨</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Animations</div>
-                <div class="example-card-description">
-                    Démonstration complète de toutes les animations CSS et transitions fluides.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge badge-new">NEW</span>
-                    <span class="badge">Animations</span>
-                    <span class="badge">Transitions</span>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <!-- Section v1.0.0 Templates -->
-    <h2 class="section-title">🎯 Templates Complets v1.0</h2>
-    <div class="examples-grid">
-        <!-- Dashboard -->
-        <a href="./dashboard.html" class="example-card">
-            <div class="example-card-image">📊</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Dashboard</div>
-                <div class="example-card-description">
-                    Un tableau de bord complet avec cartes, graphiques et statistiques.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge">Cards</span>
-                    <span class="badge">Grid</span>
-                    <span class="badge">Responsive</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Landing Page -->
-        <a href="./landing-page.html" class="example-card">
-            <div class="example-card-image">🚀</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Landing Page</div>
-                <div class="example-card-description">
-                    Page d'accueil moderne avec héros, fonctionnalités et appel à l'action.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge">Navbar</span>
-                    <span class="badge">Buttons</span>
-                    <span class="badge">Typography</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Blog Article -->
-        <a href="./blog-article.html" class="example-card">
-            <div class="example-card-image">📝</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Blog Article</div>
-                <div class="example-card-description">
-                    Article de blog avec titre, contenu formaté et commentaires.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge">Typography</span>
-                    <span class="badge">Images</span>
-                    <span class="badge">Cards</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- E-commerce Product -->
-        <a href="./e-commerce-product.html" class="example-card">
-            <div class="example-card-image">🛍️</div>
-            <div class="example-card-body">
-                <div class="example-card-title">E-commerce Product</div>
-                <div class="example-card-description">
-                    Page produit e-commerce complète avec images, prix et avis clients.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge">Badges</span>
-                    <span class="badge">Buttons</span>
-                    <span class="badge">Alerts</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Portfolio -->
-        <a href="./portfolio.html" class="example-card">
-            <div class="example-card-image">💼</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Portfolio</div>
-                <div class="example-card-description">
-                    Portfolio personnel avec projets, compétences et formulaire de contact.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge">Cards</span>
-                    <span class="badge">Grid</span>
-                    <span class="badge">Forms</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Contact Form -->
-        <a href="./contact.html" class="example-card">
-            <div class="example-card-image">📧</div>
-            <div class="example-card-body">
-                <div class="example-card-title">Contact Page</div>
-                <div class="example-card-description">
-                    Page de contact avec formulaire, validation et éléments interactifs.
-                </div>
-                <div class="example-card-tags">
-                    <span class="badge">Forms</span>
-                    <span class="badge">Inputs</span>
-                    <span class="badge">Buttons</span>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <!-- Footer -->
-    <div style="text-align: center; color: white; margin-top: 4rem; padding: 2rem;">
-        <p>KitokoCSS v1.1.0 • Créé avec ❤️ par FomaDev</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">
-            <a href="../README.md" style="color: inherit; text-decoration: none;">← Retour au README</a>
-        </p>
-    </div>
-</body>
-</html>
-    <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 2rem 0;
-        }
-        .examples-header {
-            text-align: center;
-            color: white;
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-        }
-        .examples-header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .examples-header p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .example-card {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .example-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        .example-card-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-        .example-card-body {
-            padding: 1.5rem;
-        }
-        .example-card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #212529;
-        }
-        .example-card-description {
-            color: #6c757d;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .example-card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .example-tag {
-            background: #f8f9fa;
-            color: #007bff;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
         }
         .back-link {
             display: inline-flex;
@@ -348,16 +42,11 @@
             gap: 0.5rem;
             color: white;
             text-decoration: none;
-            margin-bottom: 2rem;
-            padding: 0.75rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             background: rgba(255,255,255,0.2);
             border-radius: 0.5rem;
             transition: background 0.3s;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-            padding-left: 1rem;
+            margin-bottom: 1.5rem;
         }
         .back-link:hover {
             background: rgba(255,255,255,0.3);
@@ -368,135 +57,283 @@
             height: 1em;
             vertical-align: middle;
         }
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .example-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .example-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+        }
+        .example-card-image {
+            width: 100%;
+            height: 190px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .example-card-body {
+            padding: 1.4rem 1.5rem 1.5rem;
+        }
+        .example-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #212529;
+        }
+        .example-card-description {
+            color: #6c757d;
+            margin-bottom: 0.9rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .example-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.55rem;
+            border-radius: 999px;
+            background: #e9ecef;
+            color: #495057;
+        }
+        .badge-new {
+            background: #d4edda;
+            color: #155724;
+        }
+        .section-title {
+            color: white;
+            text-align: center;
+            margin: 2.5rem 0 1.5rem;
+            font-size: 1.6rem;
+        }
+        @media (max-width: 576px) {
+            .examples-header h1 {
+                font-size: 2rem;
+            }
+            .examples-header p {
+                font-size: 1rem;
+            }
+            .example-card-image {
+                height: 160px;
+            }
+        }
     </style>
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
-        <symbol id="icon-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></symbol>
-        <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-        <symbol id="icon-shopping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
-        <symbol id="icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></symbol>
-        <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
-        <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
-        <symbol id="icon-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </symbol>
+        <symbol id="icon-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </symbol>
+        <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </symbol>
+        <symbol id="icon-shopping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </symbol>
+        <symbol id="icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+        </symbol>
+        <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </symbol>
+        <symbol id="icon-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+        </symbol>
+        <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v4m0 12v4M4.93 4.93l2.12 2.12m9.9 9.9l2.12 2.12M2 12h4m12 0h4M6.34 17.66l-2.12 2.12m13.44-13.44l-2.12 2.12"/>
+        </symbol>
     </svg>
 
-    <div class="kt-container">
+    <div class="kt-container kt-max-width-xl">
         <a href="../guide.html" class="back-link">
             <svg class="icon"><use href="#icon-arrow-left"></use></svg>
-            Retour au Guide
+            Retour au guide
         </a>
 
+        <!-- Header -->
         <div class="examples-header">
+            <div class="version-badge">KitokoCSS v1.1.0 • Janvier 2026</div>
             <h1>Exemples KitokoCSS</h1>
-            <p>Découvrez des templates complets et fonctionnels créés avec KitokoCSS</p>
+            <p>Templates complets, pages vitrines et démonstrations pour démarrer très vite</p>
         </div>
 
+        <!-- Section v1.1.0 -->
+        <h2 class="section-title">✨ Nouveautés v1.1.0</h2>
+        <div class="examples-grid kt-mb-4">
+            <a href="./v1-1-showcase.html" class="example-card">
+                <div class="example-card-image">
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-sparkles"></use></svg>
+                </div>
+                <div class="example-card-body">
+                    <div class="example-card-title">Showcase v1.1</div>
+                    <div class="example-card-description">
+                        Tous les nouveaux composants (tabs, accordions, tooltips, skeleton, spinner...) dans une seule page.
+                    </div>
+                    <div class="example-card-tags">
+                        <span class="badge badge-new">NEW</span>
+                        <span class="badge">Tabs</span>
+                        <span class="badge">Accordion</span>
+                        <span class="badge">Tooltips</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./animations-transitions.html" class="example-card">
+                <div class="example-card-image">
+                    ✨
+                </div>
+                <div class="example-card-body">
+                    <div class="example-card-title">Animations & Transitions</div>
+                    <div class="example-card-description">
+                        Catalogue complet des animations, transitions, effets hover et dégradés prêts à l’emploi.
+                    </div>
+                    <div class="example-card-tags">
+                        <span class="badge badge-new">NEW</span>
+                        <span class="badge">Animations</span>
+                        <span class="badge">Transitions</span>
+                        <span class="badge">Hover</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Section Templates -->
+        <h2 class="section-title">🎯 Templates complets</h2>
         <div class="examples-grid">
             <a href="dashboard.html" class="example-card">
                 <div class="example-card-image">
-                    <svg style="width: 80px; height: 80px;"><use href="#icon-dashboard"></use></svg>
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-dashboard"></use></svg>
                 </div>
                 <div class="example-card-body">
                     <h3 class="example-card-title">Dashboard Administrateur</h3>
                     <p class="example-card-description">
-                        Un tableau de bord moderne avec sidebar, statistiques en temps réel, graphiques et tableaux de données. Parfait pour les applications d'administration.
+                        Tableau de bord moderne avec sidebar, statistiques clés, graphiques et tableau des commandes.
                     </p>
                     <div class="example-card-tags">
-                        <span class="example-tag">Sidebar</span>
-                        <span class="example-tag">Statistiques</span>
-                        <span class="example-tag">Tableaux</span>
+                        <span class="badge">Sidebar</span>
+                        <span class="badge">Statistiques</span>
+                        <span class="badge">Tables</span>
                     </div>
                 </div>
             </a>
 
             <a href="landing-page.html" class="example-card">
                 <div class="example-card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    <svg style="width: 80px; height: 80px;"><use href="#icon-globe"></use></svg>
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-globe"></use></svg>
                 </div>
                 <div class="example-card-body">
-                    <h3 class="example-card-title">Page d'Accueil</h3>
+                    <h3 class="example-card-title">Landing Page</h3>
                     <p class="example-card-description">
-                        Une landing page élégante avec hero section, présentation des fonctionnalités, témoignages et formulaire de contact. Idéal pour présenter votre produit ou service.
+                        Page d’accueil avec hero section, bloc de fonctionnalités, CTA, section contact et footer complet.
                     </p>
                     <div class="example-card-tags">
-                        <span class="example-tag">Hero</span>
-                        <span class="example-tag">Features</span>
-                        <span class="example-tag">Contact</span>
+                        <span class="badge">Hero</span>
+                        <span class="badge">Navbar</span>
+                        <span class="badge">CTA</span>
                     </div>
                 </div>
             </a>
 
             <a href="e-commerce-product.html" class="example-card">
                 <div class="example-card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <svg style="width: 80px; height: 80px;"><use href="#icon-shopping"></use></svg>
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-shopping"></use></svg>
                 </div>
                 <div class="example-card-body">
                     <h3 class="example-card-title">Page Produit E-commerce</h3>
                     <p class="example-card-description">
-                        Une page produit complète avec galerie d'images, sélecteurs de taille et couleur, quantité, description détaillée et produits similaires.
+                        Fiche produit avec galerie d’images, tailles, couleurs, quantité, onglets de détails et produits similaires.
                     </p>
                     <div class="example-card-tags">
-                        <span class="example-tag">E-commerce</span>
-                        <span class="example-tag">Galerie</span>
-                        <span class="example-tag">Panier</span>
+                        <span class="badge">E‑commerce</span>
+                        <span class="badge">Galerie</span>
+                        <span class="badge">Avis</span>
                     </div>
                 </div>
             </a>
 
             <a href="blog-article.html" class="example-card">
                 <div class="example-card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                    <svg style="width: 80px; height: 80px;"><use href="#icon-file-text"></use></svg>
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-file-text"></use></svg>
                 </div>
                 <div class="example-card-body">
                     <h3 class="example-card-title">Article de Blog</h3>
                     <p class="example-card-description">
-                        Une mise en page d'article de blog professionnelle avec header, contenu structuré, sidebar avec articles récents et section de commentaires.
+                        Article complet avec header illustré, contenu structuré, sidebar d’articles récents et commentaires.
                     </p>
                     <div class="example-card-tags">
-                        <span class="example-tag">Blog</span>
-                        <span class="example-tag">Article</span>
-                        <span class="example-tag">Sidebar</span>
+                        <span class="badge">Blog</span>
+                        <span class="badge">Sidebar</span>
+                        <span class="badge">Commentaires</span>
                     </div>
                 </div>
             </a>
 
             <a href="portfolio.html" class="example-card">
                 <div class="example-card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    <svg style="width: 80px; height: 80px;"><use href="#icon-layout"></use></svg>
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-layout"></use></svg>
                 </div>
                 <div class="example-card-body">
                     <h3 class="example-card-title">Portfolio Créatif</h3>
                     <p class="example-card-description">
-                        Un portfolio moderne avec grille de projets, filtres, modales de détail et présentation personnelle. Parfait pour les designers et développeurs.
+                        Portfolio personnel avec sections à propos, compétences, grille filtrable de projets et formulaire de contact.
                     </p>
                     <div class="example-card-tags">
-                        <span class="example-tag">Portfolio</span>
-                        <span class="example-tag">Grille</span>
-                        <span class="example-tag">Modales</span>
+                        <span class="badge">Portfolio</span>
+                        <span class="badge">Grid</span>
+                        <span class="badge">Formulaire</span>
                     </div>
                 </div>
             </a>
 
             <a href="contact.html" class="example-card">
                 <div class="example-card-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                    <svg style="width: 80px; height: 80px;"><use href="#icon-mail"></use></svg>
+                    <svg style="width: 72px; height: 72px;"><use href="#icon-mail"></use></svg>
                 </div>
                 <div class="example-card-body">
                     <h3 class="example-card-title">Page de Contact</h3>
                     <p class="example-card-description">
-                        Une page de contact complète avec formulaire de contact, informations de contact, carte interactive et réseaux sociaux.
+                        Page de contact avec informations, formulaire détaillé, bloc carte et liens vers les réseaux sociaux.
                     </p>
                     <div class="example-card-tags">
-                        <span class="example-tag">Contact</span>
-                        <span class="example-tag">Formulaire</span>
-                        <span class="example-tag">Carte</span>
+                        <span class="badge">Contact</span>
+                        <span class="badge">Formulaire</span>
+                        <span class="badge">Social</span>
                     </div>
                 </div>
             </a>
         </div>
+
+        <div class="kt-text-center kt-text-light kt-mt-5" style="opacity: 0.9;">
+            <p>KitokoCSS v1.1.0 • Créé avec ❤️ par FomaDev</p>
+        </div>
     </div>
 </body>
 </html>
-

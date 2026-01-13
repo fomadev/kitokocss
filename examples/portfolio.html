@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - MOLENGO MALANDA FORDI</title>
     <link rel="icon" type="image/png" href="../logo-trans.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@v1.0.0/dist/kitoko.min.css">
+    <!-- Utiliser le build local v1.1 -->
+    <link rel="stylesheet" href="../dist/kitoko.min.css">
     <style>
         .hero-portfolio {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -99,7 +100,10 @@
     <!-- Navbar -->
     <nav class="kt-navbar" data-kt-sticky>
         <a class="kt-navbar-brand" href="index.html"><img src="../logo-trans.png" alt="Portfolio" style="height: 30px; vertical-align: middle; margin-right: 0.5rem;">Portfolio</a>
-        <div class="kt-navbar-collapse">
+        <button class="kt-navbar-toggler" data-kt-toggle="collapse" data-kt-target="#portfolioNavbar">
+            <span class="kt-navbar-toggler-icon"></span>
+        </button>
+        <div class="kt-navbar-collapse collapse" id="portfolioNavbar">
             <ul class="kt-navbar-nav">
                 <li class="kt-nav-item"><a class="kt-nav-link" href="#about">À propos</a></li>
                 <li class="kt-nav-item"><a class="kt-nav-link" href="#portfolio">Portfolio</a></li>
