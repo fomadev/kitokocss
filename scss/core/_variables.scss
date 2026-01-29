@@ -1,0 +1,37 @@
+// 1. Couleurs (Système de base)
+$k-primary: #2563eb !default; // Bleu Kitoko
+$k-secondary: #64748b !default;
+$k-success: #22c55e !default;
+$k-danger: #ef4444 !default;
+$k-dark: #0f172a !default;
+$k-light: #f8fafc !default;
+$k-white: #ffffff !default;
+
+// 2. Échelle de Gris (Neutral)
+$k-gray-100: #f1f5f9;
+$k-gray-500: #64748b;
+$k-gray-900: #0f172a;
+
+// 3. Typographie
+$k-font-main: 'Inter', system-ui, -apple-system, sans-serif;
+$k-font-size-base: 16px;
+$k-line-height-base: 1.5;
+
+// 4. Breakpoints (Points de rupture pour le Responsive)
+$k-breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px
+);
+
+// 5. Espacements (Spacing scale)
+$k-spacer: 1rem; // 16px
+$k-spacers: (
+  0: 0,
+  1: $k-spacer * 0.25, // 4px
+  2: $k-spacer * 0.5,  // 8px
+  3: $k-spacer,        // 16px
+  4: $k-spacer * 1.5,  // 24px
+  5: $k-spacer * 3     // 48px
+);
