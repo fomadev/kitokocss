@@ -1,7 +1,10 @@
-// 1. Core (Variables d'abord !)
+// 1. Core
 @import 'core/variables';
 
 // 2. Base
 @import 'base/reset';
+@import 'base/typography';
 
-// 3. Ici viendront la typographie, la grille et les composants
+// 3. Layout
+@import 'layout/container';
+@import 'layout/grid';

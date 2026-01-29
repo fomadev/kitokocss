@@ -1,0 +1,28 @@
+// Échelle de titres
+h1, .k-h1 {
+  font-size: 2.5rem; // 40px
+  margin-bottom: $k-spacer;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2, .k-h2 {
+  font-size: 2rem; // 32px
+  margin-bottom: $k-spacer * 0.75;
+  font-weight: 600;
+}
+
+h3, .k-h3 {
+  font-size: 1.75rem; // 28px
+  margin-bottom: $k-spacer * 0.5;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $k-spacer;
+}
+
+// Utilitaires de texte
+.k-text-center { text-align: center; }
+.k-text-primary { color: $k-primary; }
+.k-text-bold { font-weight: bold; }

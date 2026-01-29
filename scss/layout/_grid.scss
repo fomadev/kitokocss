@@ -1,0 +1,20 @@
+.k-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$k-spacer * 0.5;
+  margin-left: -$k-spacer * 0.5;
+}
+
+.k-col {
+  flex: 1 0 0%; // Colonne automatique
+  padding: $k-spacer * 0.5;
+}
+
+// Système de 12 colonnes de base
+@for $i from 1 through 12 {
+  .k-col-#{$i} {
+    flex: 0 0 auto;
+    width: calc(100% / 12 * #{$i});
+    padding: $k-spacer * 0.5;
+  }
+}
