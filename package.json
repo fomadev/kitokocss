@@ -1,0 +1,20 @@
+{
+  "name": "kitokocss",
+  "version": "1.0.0",
+  "description": "Framework CSS moderne, modulaire et léger.",
+  "main": "dist/js/kitoko.js",
+  "author": "FomaDev",
+  "license": "MIT",
+  "scripts": {
+    "sass:build": "sass scss/kitoko.scss dist/css/kitoko.css --no-source-map",
+    "sass:minify": "cleancss -o dist/css/kitoko.min.css dist/css/kitoko.css",
+    "js:minify": "terser js/kitoko.js -o dist/js/kitoko.min.js --compress --mangle",
+    "build": "npm run sass:build && npm run sass:minify && npm run js:minify",
+    "watch": "sass scss/kitoko.scss dist/css/kitoko.css --watch"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "sass": "^1.70.0",
+    "terser": "^5.27.0"
+  }
+}
