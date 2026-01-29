@@ -1,0 +1,24 @@
+// Modern Reset
+*, *::before, *::after {
+  box-sizing: border-box; // Gestion propre des bordures et paddings
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $k-font-main;
+  font-size: $k-font-size-base;
+  line-height: $k-line-height-base;
+  color: $k-gray-900;
+  background-color: $k-white;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%; // Évite que les images dépassent de l'écran
+}
+
+button, input, select, textarea {
+  font: inherit; // Force les formulaires à utiliser la police du site
+}
