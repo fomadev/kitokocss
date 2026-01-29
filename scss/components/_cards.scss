@@ -1,0 +1,38 @@
+@use "../core/variables" as *;
+
+.k-card {
+  background-color: $k-white;
+  border: 1px solid $k-gray-100;
+  border-radius: 0.5rem;
+  overflow: hidden; // Pour que l'image ne dépasse pas des arrondis
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px); // Petit effet de lévitation
+  }
+
+  &-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: $k-gray-100;
+  }
+
+  &-body {
+    padding: $k-spacer;
+  }
+
+  &-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: $k-spacer * 0.5;
+    color: $k-gray-900;
+  }
+
+  &-text {
+    color: $k-gray-500;
+    font-size: 0.95rem;
+    margin-bottom: $k-spacer;
+  }
+}
