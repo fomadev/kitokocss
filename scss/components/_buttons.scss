@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../core/variables" as *;
+
 .k-btn {
   display: inline-block;
   padding: 0.6rem 1.25rem;
@@ -15,7 +18,7 @@
     background-color: $k-primary;
     color: $k-white;
     &:hover {
-      background-color: darken($k-primary, 10%);
+      background-color: color.adjust($k-primary, $lightness: -10%);
     }
   }
 
