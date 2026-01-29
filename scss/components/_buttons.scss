@@ -2,34 +2,76 @@
 @use "../core/variables" as *;
 
 .k-btn {
-  display: inline-block;
+  // --- Structure de base ---
+  display: inline-flex; // Aligne parfaitement le texte et d'éventuelles icônes
+  align-items: center;
+  justify-content: center;
   padding: 0.6rem 1.25rem;
+  
+  // --- Typographie & Look ---
+  font-family: inherit;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  
+  // --- Bordures et Coins ---
   border: 1px solid transparent;
   border-radius: 0.375rem; // Look moderne
+  
+  // --- Animation ---
   transition: all 0.2s ease-in-out;
-  font-family: inherit;
+
+  // --- Variantes de Couleurs ---
 
   // Version Primaire
   &-primary {
     background-color: $k-primary;
-    color: $k-white;
+    color: $k-white !important; // Force le blanc même sur les balises <a>
+
     &:hover {
       background-color: color.adjust($k-primary, $lightness: -10%);
+      color: $k-white !important;
     }
   }
 
   // Version Outline (Bordure uniquement)
   &-outline {
     background-color: transparent;
-    border-color: $k-primary;
-    color: $k-primary;
+    border: 1px solid $k-primary;
+    color: $k-primary !important;
+
     &:hover {
       background-color: $k-primary;
-      color: $k-white;
+      color: $k-white !important;
     }
+  }
+
+  // --- Variantes de Tailles ---
+
+  // Small (Petit)
+  &-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  // Large (Grand)
+  &-lg {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.25rem;
+  }
+
+  // --- Accessibilité ---
+  &:focus {
+    outline: 2px solid color.adjust($k-primary, $lightness: 20%);
+    outline-offset: 2px;
+  }
+
+  // État désactivé (Optionnel mais recommandé)
+  &:disabled, 
+  &.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
