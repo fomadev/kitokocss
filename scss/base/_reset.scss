@@ -15,6 +15,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  color: inherit; // Prend la couleur du texte autour
+  text-decoration: none; // Enlève le soulignement moche par défaut
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: $k-primary; // Change de couleur seulement au survol
+  }
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%; // Évite que les images dépassent de l'écran
