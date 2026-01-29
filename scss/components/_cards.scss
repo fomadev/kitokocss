@@ -1,38 +1,60 @@
+@use "sass:color";
 @use "../core/variables" as *;
 
 .k-card {
-  background-color: $k-white;
-  border: 1px solid $k-gray-100;
-  border-radius: 0.5rem;
-  overflow: hidden; // Pour que l'image ne dépasse pas des arrondis
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  // --- Structure & Layout ---
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important; // Assure que toutes les cartes d'une ligne ont la même hauteur
+  background-color: $k-white !important;
+  padding: $k-spacer !important; // Décolle le contenu des bords
+  
+  // --- Esthétique ---
+  border: 1px solid $k-gray-100 !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important; // Sécurité pour les arrondis
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  
+  // --- Animation ---
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 
   &:hover {
-    transform: translateY(-4px); // Petit effet de lévitation
+    transform: translateY(-4px) !important; // Effet de lévitation
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
   }
 
+  // --- Image (si présente) ---
   &-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background-color: $k-gray-100;
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    background-color: $k-gray-100 !important;
+    margin: -#{$k-spacer} -#{$k-spacer} $k-spacer -#{$k-spacer} !important; // Annule le padding du parent pour l'image
   }
 
+  // --- Corps de la carte ---
   &-body {
-    padding: $k-spacer;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    // Note : pas de padding ici car il est déjà sur .k-card
   }
 
+  // --- Titre ---
   &-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: $k-spacer * 0.5;
-    color: $k-gray-900;
+    margin-top: 0 !important;
+    margin-bottom: $k-spacer * 0.5 !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: $k-primary !important; // Utilise la couleur primaire du framework
   }
 
+  // --- Texte ---
   &-text {
-    color: $k-gray-500;
-    font-size: 0.95rem;
-    margin-bottom: $k-spacer;
+    flex-grow: 1 !important; // Pousse le bouton ou le footer vers le bas
+    color: $k-gray-500 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: $k-spacer !important;
+    line-height: 1.5 !important;
   }
 }
