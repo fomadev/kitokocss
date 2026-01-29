@@ -1,0 +1,60 @@
+.k-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $k-spacer;
+  background-color: $k-white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  .k-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $k-primary;
+    text-decoration: none;
+  }
+
+  .k-nav-links {
+    display: flex;
+    gap: $k-spacer;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: $k-gray-900;
+      font-weight: 500;
+      &:hover { color: $k-primary; }
+    }
+  }
+
+  // Le bouton Burger (caché sur desktop)
+  .k-burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+// Version Mobile (Responsive)
+@media (max-width: 768px) {
+  .k-navbar {
+    .k-nav-links {
+      display: none; // Caché par défaut sur mobile
+      &.k-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: $k-white;
+        padding: $k-spacer;
+        border-top: 1px solid $k-gray-100;
+      }
+    }
+    .k-burger { display: block; }
+  }
+}
