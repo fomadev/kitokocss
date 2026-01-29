@@ -1,11 +1,25 @@
-// On utilise @use au lieu de @import
+/**
+ * KITOKO CSS Framework v1.0.0
+ * Fichier principal d'assemblage
+ */
+
+// 1. CONFIGURATION (Variables et outils partagés)
 @use "core/variables" as *;
 @use "core/functions" as *;
 @use "core/mixins" as *;
+
+// 2. BASE (Styles globaux et typographie)
 @use "base/reset";
 @use "base/typography";
+
+// 3. LAYOUT (Structure et grille)
 @use "layout/container";
 @use "layout/grid";
+
+// 4. COMPOSANTS (Éléments d'interface réutilisables)
 @use "components/navbar";
+@use "components/cards";
 @use "components/buttons";
+
+// 5. UTILITAIRES (Classes d'aide - Doivent être en dernier)
 @use "utilities/utilities";

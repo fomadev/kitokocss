@@ -13,6 +13,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #2563eb;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -223,9 +232,55 @@ p {
     width: 100%;
   }
 }
+.k-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background-color: #ffffff !important;
+  padding: 1rem !important;
+  border: 1px solid #f1f5f9 !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.k-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+.k-card-image {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  background-color: #f1f5f9 !important;
+  margin: -1rem -1rem 1rem -1rem !important;
+}
+.k-card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+.k-card-title {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #2563eb !important;
+}
+.k-card-text {
+  flex-grow: 1 !important;
+  color: #64748b !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.5 !important;
+}
+
 .k-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.6rem 1.25rem;
+  font-family: inherit;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -233,23 +288,40 @@ p {
   border: 1px solid transparent;
   border-radius: 0.375rem;
   transition: all 0.2s ease-in-out;
-  font-family: inherit;
 }
 .k-btn-primary {
   background-color: #2563eb;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .k-btn-primary:hover {
   background-color: rgb(18.5714285714, 76.1428571429, 202.4285714286);
+  color: #ffffff !important;
 }
 .k-btn-outline {
   background-color: transparent;
-  border-color: #2563eb;
-  color: #2563eb;
+  border: 1px solid #2563eb;
+  color: #2563eb !important;
 }
 .k-btn-outline:hover {
   background-color: #2563eb;
-  color: #ffffff;
+  color: #ffffff !important;
+}
+.k-btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+.k-btn-lg {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.25rem;
+}
+.k-btn:focus {
+  outline: 2px solid rgb(130.4285714286, 165.8571428571, 243.5714285714);
+  outline-offset: 2px;
+}
+.k-btn:disabled, .k-btn.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .k-m-0 {

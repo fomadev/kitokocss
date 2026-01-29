@@ -1,22 +1,59 @@
 @use "../core/variables" as *;
 
+// ============================================================
+// CONTENEUR DE LIGNE (ROW)
+// ============================================================
 .k-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -$k-spacer * 0.5;
-  margin-left: -$k-spacer * 0.5;
+  display: flex !important;
+  flex-wrap: wrap !important; // Essentiel pour le responsive
+  margin-right: calc($k-spacer * -0.5) !important;
+  margin-left: calc($k-spacer * -0.5) !important;
 }
 
+// ============================================================
+// COLONNES (COLUMNS) - MOBILE PAR DÉFAUT (100%)
+// ============================================================
+// On cible toutes les classes commençant par k-col-
+[class^="k-col-"], .k-col {
+  width: 100% !important; 
+  flex: 0 0 auto !important;
+  padding-right: calc($k-spacer * 0.5) !important;
+  padding-left: calc($k-spacer * 0.5) !important;
+}
+
+// Colonne automatique (prend l'espace restant)
 .k-col {
-  flex: 1 0 0%; // Colonne automatique
-  padding: $k-spacer * 0.5;
+  flex: 1 0 0% !important;
+  width: auto !important;
 }
 
-// Système de 12 colonnes de base
+// ============================================================
+// SYSTÈME DE 12 COLONNES (Génération automatique)
+// ============================================================
+
+// --- Mobile (Small / Toutes tailles) ---
 @for $i from 1 through 12 {
   .k-col-#{$i} {
-    flex: 0 0 auto;
-    width: calc(100% / 12 * #{$i});
-    padding: $k-spacer * 0.5;
+    width: calc(100% / 12 * #{$i}) !important;
+  }
+}
+
+// --- Tablettes et Desktop (md = 768px et +) ---
+@media (min-width: 768px) {
+  @for $i from 1 through 12 {
+    .k-col-md-#{$i} {
+      flex: 0 0 auto !important;
+      width: calc(100% / 12 * #{$i}) !important;
+    }
+  }
+}
+
+// --- Grands écrans (lg = 1024px et +) ---
+@media (min-width: 1024px) {
+  @for $i from 1 through 12 {
+    .k-col-lg-#{$i} {
+      flex: 0 0 auto !important;
+      width: calc(100% / 12 * #{$i}) !important;
+    }
   }
 }

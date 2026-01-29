@@ -1,20 +1,56 @@
 @use "../core/variables" as *;
 
-// Marges et Paddings (Générés automatiquement)
+// ============================================================
+// ESPACEMENTS (Générés automatiquement via $k-spacers)
+// ============================================================
 @each $key, $val in $k-spacers {
+  // Marges globales
   .k-m-#{$key}  { margin: $val !important; }
-  .k-mt-#{$key} { margin-top: $val !important; }
-  .k-mb-#{$key} { margin-bottom: $val !important; }
+  
+  // Marges spécifiques par axe
+  .k-mt-#{$key} { margin-top: $val !important; }    // Top
+  .k-mb-#{$key} { margin-bottom: $val !important; } // Bottom
+  .k-ml-#{$key} { margin-left: $val !important; }   // Left
+  .k-mr-#{$key} { margin-right: $val !important; }  // Right
+  
+  // Paddings globaux
   .k-p-#{$key}  { padding: $val !important; }
-  .k-pt-#{$key} { padding-top: $val !important; }
-  .k-pb-#{$key} { padding-bottom: $val !important; }
+  
+  // Paddings spécifiques par axe
+  .k-pt-#{$key} { padding-top: $val !important; }   // Top
+  .k-pb-#{$key} { padding-bottom: $val !important; } // Bottom
+  .k-pl-#{$key} { padding-left: $val !important; }   // Left
+  .k-pr-#{$key} { padding-right: $val !important; }  // Right
 }
 
-// Display & Visibility
+// ============================================================
+// DISPLAY & VISIBILITY
+// ============================================================
 .k-d-none   { display: none !important; }
 .k-d-flex   { display: flex !important; }
 .k-d-block  { display: block !important; }
+.k-d-inline { display: inline !important; }
+.k-d-inline-block { display: inline-block !important; }
 
-// Alignement
-.k-align-center { align-items: center; }
-.k-justify-between { justify-content: space-between; }
+// ============================================================
+// FLEXBOX ALIGNEMENT
+// ============================================================
+.k-flex-wrap { flex-wrap: wrap !important; }
+
+// Alignement vertical (Cross Axis)
+.k-align-center  { align-items: center !important; }
+.k-align-start   { align-items: flex-start !important; }
+.k-align-end     { align-items: flex-end !important; }
+
+// Alignement horizontal (Main Axis)
+.k-justify-center  { justify-content: center !important; }
+.k-justify-between { justify-content: space-between !important; }
+.k-justify-start   { justify-content: flex-start !important; }
+.k-justify-end     { justify-content: flex-end !important; }
+
+// ============================================================
+// TYPOGRAPHIE RAPIDE (Complémentaire)
+// ============================================================
+.k-text-center { text-align: center !important; }
+.k-text-left   { text-align: left !important; }
+.k-text-right  { text-align: right !important; }
