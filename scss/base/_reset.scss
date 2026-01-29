@@ -1,6 +1,7 @@
-// Modern Reset
+@use "../core/variables" as *;
+
 *, *::before, *::after {
-  box-sizing: border-box; // Gestion propre des bordures et paddings
+  box-sizing: border-box;
 }
 
 body {
