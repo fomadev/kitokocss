@@ -3,81 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KitokoCSS — Démo v1.0.0</title>
+    <title>Mon Portfolio — Propulsé par KitokoCSS</title>
     
     <link rel="stylesheet" href="dist/css/kitoko.min.css">
-    
-    <style>
-        /* Styles temporaires pour la démo */
-        .demo-box {
-            background-color: #f1f5f9;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px dashed #cbd5e1;
-        }
-    </style>
 </head>
 <body>
 
     <nav class="k-navbar">
-        <a href="#" class="k-logo">KITOKO</a>
-
-        <button class="k-burger" data-kitoko="burger" data-target="#mainNav">
+        <a href="#" class="k-logo">KITOKO.</a>
+        
+        <button class="k-burger" data-kitoko="burger" data-target="#menuPrincipal">
             ☰
         </button>
 
-        <ul class="k-nav-links" id="mainNav">
-            <li><a href="#typographie">Design</a></li>
-            <li><a href="#grille">Grille</a></li>
-            <li><a href="#composants">Composants</a></li>
-            <li class="k-btn k-btn-primary k-text-white">GitHub</li>
+        <ul class="k-nav-links" id="menuPrincipal">
+            <li><a href="#">Projets</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="k-btn k-btn-primary k-btn-sm">Engagez-moi</a></li>
         </ul>
     </nav>
 
-    <header class="k-container k-mt-5 k-text-center">
-        <h1 class="k-text-primary">Construisez plus vite avec KitokoCSS</h1>
-        <p class="k-h3 k-gray-500">Un framework léger, moderne et modulaire pour vos projets web.</p>
-        <div class="k-mt-4">
-            <button class="k-btn k-btn-primary">Commencer</button>
-            <button class="k-btn k-btn-outline k-ml-2" data-kitoko="toggle" data-target="#info">En savoir plus</button>
-        </div>
-
-        <div id="info" class="k-d-none k-mt-4 k-p-3 k-gray-100" style="border-radius: 8px;">
-            💡 Vous venez de tester l'action <strong>Toggle</strong> de Kitoko JS !
+    <header class="k-container k-py-5 k-text-center">
+        <div class="k-pt-5 k-pb-5">
+            <h1 class="k-text-primary">Développeur UI/UX Moderne</h1>
+            <p class="k-h3 k-mb-4">Je crée des interfaces rapides et élégantes avec KitokoCSS.</p>
+            <div class="k-d-flex k-justify-center k-mt-4" style="gap: 1rem;">
+                <a href="#" class="k-btn k-btn-primary">Voir mes projets</a>
+                <button class="k-btn k-btn-outline">En savoir plus</button>
+            </div>
+            
+            <div id="detailsHero" class="k-d-none k-mt-4 k-p-3 k-gray-100" style="border-radius: 8px;">
+                🚀 KitokoCSS est conçu pour la performance et la simplicité.
+            </div>
         </div>
     </header>
 
-    <hr class="k-m-5">
-
-    <main class="k-container">
-        <h2 id="grille" class="k-mb-4">Système de Grille</h2>
+    <section class="k-container k-py-5">
+        <h2 class="k-mb-4 k-text-center">Mes Projets Récents</h2>
+        
         <div class="k-row">
-            <div class="k-col-md-4 k-mb-3">
-                <div class="demo-box">
-                    <h4>Colonne 1/3</h4>
-                    <p>S'adapte automatiquement sur mobile.</p>
+            <div class="k-col-md-4 k-mb-4">
+                <div class="k-card">
+                    <h3 class="k-card-title">Application Web v1</h3>
+                    <p class="k-card-text">Une interface fluide construite avec le moteur de grille Kitoko.</p>
+                    <a href="#" class="k-btn k-btn-outline k-btn-sm">Détails</a>
                 </div>
             </div>
-            <div class="k-col-md-4 k-mb-3">
-                <div class="demo-box">
-                    <h4>Colonne 1/3</h4>
-                    <p>Parfait pour les listes de services.</p>
+            </div>
+
+            <div class="k-col-md-4 k-mb-4">
+                <div class="k-card">
+                    <div class="k-card-body">
+                        <h3 class="k-card-title">E-commerce UI</h3>
+                        <p class="k-card-text">Gestion des couleurs avancées et composants réutilisables.</p>
+                        <a href="#" class="k-btn k-btn-outline k-btn-sm">Détails</a>
+                    </div>
                 </div>
             </div>
-            <div class="k-col-md-4 k-mb-3">
-                <div class="demo-box">
-                    <h4>Colonne 1/3</h4>
-                    <p>Utilise Flexbox sous le capot.</p>
+
+            <div class="k-col-md-4 k-mb-4">
+                <div class="k-card">
+                    <div class="k-card-body">
+                        <h3 class="k-card-title">Dashboard Pro</h3>
+                        <p class="k-card-text">Utilisation intensive des utilitaires de marge et de padding.</p>
+                        <a href="#" class="k-btn k-btn-outline k-btn-sm">Détails</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="k-text-center k-p-5 k-mt-5 k-gray-100">
-        <p>&copy; 2026 KitokoCSS Framework — Fièrement développé.</p>
+    <footer class="k-p-5 k-text-center k-gray-100 k-mt-5">
+        <p class="k-mb-0">Réalisé avec ❤️ par <strong>KitokoCSS v1.0.0</strong></p>
     </footer>
 
-    <script src="dist/js/kitoko.min.js"></script>
+    <script src="js/kitoko.js"></script>
 </body>
 </html>
