@@ -1,0 +1,18 @@
+// Marges et Paddings (Générés automatiquement)
+@each $key, $val in $k-spacers {
+  .k-m-#{$key}  { margin: $val !important; }
+  .k-mt-#{$key} { margin-top: $val !important; }
+  .k-mb-#{$key} { margin-bottom: $val !important; }
+  .k-p-#{$key}  { padding: $val !important; }
+  .k-pt-#{$key} { padding-top: $val !important; }
+  .k-pb-#{$key} { padding-bottom: $val !important; }
+}
+
+// Display & Visibility
+.k-d-none   { display: none !important; }
+.k-d-flex   { display: flex !important; }
+.k-d-block  { display: block !important; }
+
+// Alignement
+.k-align-center { align-items: center; }
+.k-justify-between { justify-content: space-between; }
