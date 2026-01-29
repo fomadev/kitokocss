@@ -1,14 +1,83 @@
-<link rel="stylesheet" href="scss/kitoko.scss">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitokoCSS — Démo v1.0.0</title>
+    
+    <link rel="stylesheet" href="dist/css/kitoko.min.css">
+    
+    <style>
+        /* Styles temporaires pour la démo */
+        .demo-box {
+            background-color: #f1f5f9;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px dashed #cbd5e1;
+        }
+    </style>
+</head>
+<body>
 
-<div class="k-container k-mt-5">
-  <h1>Bienvenue dans KitokoCSS</h1>
-  <p>Le framework qui allie légèreté et puissance.</p>
-  
-  <button class="k-btn k-btn-primary" data-kitoko="toggle" data-target="#message">
-    Cliquez-moi
-  </button>
+    <nav class="k-navbar">
+        <a href="#" class="k-logo">KITOKO</a>
 
-  <div id="message" class="k-mt-3 k-p-3 k-d-none" style="background: #eee;">
-    🎉 Bravo ! Le JS et le CSS de Kitoko fonctionnent ensemble.
-  </div>
-</div>
+        <button class="k-burger" data-kitoko="burger" data-target="#mainNav">
+            ☰
+        </button>
+
+        <ul class="k-nav-links" id="mainNav">
+            <li><a href="#typographie">Design</a></li>
+            <li><a href="#grille">Grille</a></li>
+            <li><a href="#composants">Composants</a></li>
+            <li><a href="#" class="k-btn k-btn-primary k-text-white">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="k-container k-mt-5 k-text-center">
+        <h1 class="k-text-primary">Construisez plus vite avec KitokoCSS</h1>
+        <p class="k-h3 k-gray-500">Un framework léger, moderne et modulaire pour vos projets web.</p>
+        <div class="k-mt-4">
+            <button class="k-btn k-btn-primary">Commencer</button>
+            <button class="k-btn k-btn-outline k-ml-2" data-kitoko="toggle" data-target="#info">En savoir plus</button>
+        </div>
+
+        <div id="info" class="k-d-none k-mt-4 k-p-3 k-gray-100" style="border-radius: 8px;">
+            💡 Vous venez de tester l'action <strong>Toggle</strong> de Kitoko JS !
+        </div>
+    </header>
+
+    <hr class="k-m-5">
+
+    <main class="k-container">
+        <h2 id="grille" class="k-mb-4">Système de Grille</h2>
+        <div class="k-row">
+            <div class="k-col-md-4 k-mb-3">
+                <div class="demo-box">
+                    <h4>Colonne 1/3</h4>
+                    <p>S'adapte automatiquement sur mobile.</p>
+                </div>
+            </div>
+            <div class="k-col-md-4 k-mb-3">
+                <div class="demo-box">
+                    <h4>Colonne 1/3</h4>
+                    <p>Parfait pour les listes de services.</p>
+                </div>
+            </div>
+            <div class="k-col-md-4 k-mb-3">
+                <div class="demo-box">
+                    <h4>Colonne 1/3</h4>
+                    <p>Utilise Flexbox sous le capot.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="k-text-center k-p-5 k-mt-5 k-gray-100">
+        <p>&copy; 2026 KitokoCSS Framework — Fièrement développé.</p>
+    </footer>
+
+    <script src="dist/js/kitoko.min.js"></script>
+</body>
+</html>
