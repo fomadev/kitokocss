@@ -35,9 +35,9 @@ kitokocss/
 1. **Utilisation directe**
 Pour une installation rapide, liez les ressources via le CDN jsDelivr :
 ```bash
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@1.0.0/dist/css/kitoko.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@1.0.0/dist/css/kitoko.min.css">
 
-<script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@1.0.0/dist/js/kitoko.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/fomadev/kitokocss@1.0.0/dist/js/kitoko.min.js" defer></script>
 ```
 
 2. **Pour le développement (Sass)**
