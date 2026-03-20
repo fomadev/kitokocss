@@ -1,5 +1,4 @@
 # KitokoCSS v2.0.0
-> **Le "Node.js du CSS" : Moderne, Modulaire et Révolutionnaire.**
 
 KitokoCSS n'est pas qu'un framework UI. C'est un écosystème conçu pour la performance et la beauté (Kitoko). Basé sur une architecture de micro-modules, il vous permet d'installer uniquement ce dont vous avez besoin.
 
