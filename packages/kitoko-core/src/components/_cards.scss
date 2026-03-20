@@ -1,4 +1,4 @@
-@import "../variables";
+@use "../variables" as *;
 
 /* KITOKO CARD v2.0.0
    Le summum de la profondeur et de l'élégance.
@@ -10,7 +10,7 @@
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05); // Une bordure presque invisible
+  border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: var(--ktk-shadow-sm);
   transition: var(--ktk-transition);
   display: flex;
@@ -24,7 +24,7 @@
     border-color: var(--ktk-primary);
   }
 
-  // Variante Glassmorphism (La Beauté Moderne)
+  // Variante Glassmorphism
   &.ktk-glass {
     background: var(--ktk-glass);
     backdrop-filter: var(--ktk-blur);
@@ -32,9 +32,9 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  // Structure interne de la carte
+  // Structure interne
   .ktk-card-image {
-    margin: -1.5rem -1.5rem 0 -1.5rem; // Sortir de la carte pour remplir le haut
+    margin: -1.5rem -1.5rem 0 -1.5rem;
     width: calc(100% + 3rem);
     height: 200px;
     object-fit: cover;
@@ -53,11 +53,10 @@
   }
 }
 
-// Support Mode Sombre pour la bordure
+// Support Mode Sombre
 @media (prefers-color-scheme: dark) {
   .ktk-card {
     border-color: rgba(255, 255, 255, 0.1);
-    
     .ktk-card-body {
       color: rgba(255, 255, 255, 0.7);
     }

@@ -1,5 +1,7 @@
+@use "variables" as *;
+
 /* KITOKO GRID SYSTEM v2.0.0 
-  L'idée : Un design qui "respire" sans media queries complexes.
+   L'idée : Un design qui "respire" sans media queries complexes.
 */
 
 // 1. Le Container (La zone de sécurité)
@@ -7,23 +9,19 @@
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
-  padding-inline: var(--ktk-space, 1.5rem);
+  padding-inline: var(--ktk-gap, 1.5rem);
 }
 
 // 2. La Grille Magique (.ktk-grid)
-// Elle adapte le nombre de colonnes selon la largeur de l'écran AUTOMATIQUEMENT.
 .ktk-grid {
   display: grid;
   gap: var(--ktk-gap, 1.5rem);
   
-  // Cette ligne est la révolution : 
-  // Elle dit : "Mets autant de colonnes que possible, mais chaque colonne 
-  // doit faire au moins 280px (taille d'un petit mobile)."
+  // Révolution : Adaptabilité automatique sans Media Queries
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
 }
 
 // 3. Le système de "Stack" (Empilement vertical)
-// Très utile pour les formulaires ou les listes mobiles.
 .ktk-stack {
   display: flex;
   flex-direction: column;
