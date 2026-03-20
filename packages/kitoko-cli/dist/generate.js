@@ -19,7 +19,5 @@ export async function generateModule(moduleName) {
     const starterCode = `@use "../../kitoko-core/src/variables" as *;\n\n/* Module ${moduleName.toUpperCase()} - KitokoCSS */\n\n.${moduleName} {\n  // Votre code ici\n}\n`;
     fs.writeFileSync(filePath, starterCode);
     console.log(pc.gray(`Fichier créé : _${moduleName}.scss`));
-    // 3. Optionnel : On peut aussi l'ajouter automatiquement au kitoko.scss principal
-    // comme nous l'avons fait dans install.ts
 }
 //# sourceMappingURL=generate.js.map

@@ -3,13 +3,22 @@ import pc from 'picocolors';
 import { installModule } from './install.js';
 import { generateModule } from './generate.js';
 import { searchModules } from './search.js';
+import { initProject } from './init.js';
 
 const program = new Command();
 
 program
   .name('kitoko')
-  .description('L\'assistant intelligent de KitokoCSS')
-  .version('2.0.0');
+  .description(`${pc.cyan('✨ KitokoCSS CLI')} - L'assistant intelligent pour un design révolutionnaire`)
+  .version('2.0.0')
+  .addHelpText('before', `
+${pc.bold(pc.magenta('  _  ___ _        _         '))}
+${pc.bold(pc.magenta(' | |/ (_) |_ ___ | | _____  '))}
+${pc.bold(pc.magenta(' | \' /| | __/ _ \\| |/ / _ \\ '))}
+${pc.bold(pc.magenta(' | . \\| | || (_) |   < (_) |'))}
+${pc.bold(pc.magenta(' |_|\\_\\_|\\__\\___/|_|\\_\\___/ '))}
+  ${pc.italic(pc.gray('Le design qui parle, le code qui chante.'))}
+  `);
 
 // COMMANDE 1 : INSTALL (Pour ce qui existe déjà)
 program
@@ -52,6 +61,20 @@ program
       await searchModules();
     } catch (error: any) {
       console.error(pc.red(`\nImpossible de récupérer la liste : ${error.message}`));
+    }
+  });
+
+// COMMANDE 4 : INIT
+program
+  .command('init')
+  .description('Initialiser KitokoCSS dans un nouveau projet (crée la config et les dossiers)')
+  .action(async () => {
+    console.log(pc.magenta(`\nInitialisation de l'écosystème Kitoko...`));
+    try {
+      await initProject();
+      console.log(pc.green(`\nVotre projet est maintenant "Kitoko-Ready" !`));
+    } catch (error: any) {
+      console.error(pc.red(`\nErreur d'initialisation : ${error.message}`));
     }
   });
 
