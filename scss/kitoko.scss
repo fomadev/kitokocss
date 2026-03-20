@@ -1,8 +1,11 @@
-// Importation du Cœur Kitoko
-@import "../packages/kitoko-core/src/variables";
-@import "../packages/kitoko-core/src/reset";
-@import "../packages/kitoko-core/src/grid";
+// scss/kitoko.scss
 
-// Importation des composants de base
-@import "../packages/kitoko-core/src/components/buttons";
-@import "../packages/kitoko-core/src/components/cards";
+// 1. Charger les fondations
+@use "../packages/kitoko-core/src/variables" as *;
+@use "../packages/kitoko-core/src/reset";
+@use "../packages/kitoko-core/src/grid";
+
+// 2. Charger les composants
+// Assure-toi que ces fichiers existent physiquement !
+@use "../packages/kitoko-core/src/components/buttons";
+@use "../packages/kitoko-core/src/components/cards";

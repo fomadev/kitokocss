@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "prepare": "npm run build",
-    "clean": "rimraf dist packages/*/dist",
+    "clean": "rimraf dist",
     "sass:build": "sass scss/kitoko.scss dist/css/kitoko.css --no-source-map",
     "sass:minify": "cleancss -o dist/css/kitoko.min.css dist/css/kitoko.css",
     "js:minify": "terser js/kitoko.js -o dist/js/kitoko.min.js --compress --mangle",

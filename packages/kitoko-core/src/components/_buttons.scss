@@ -1,0 +1,90 @@
+@use "../variables" as *;
+
+/* KITOKO BUTTONS v2.0.0
+   L'élégance et la réactivité au bout des doigts.
+*/
+
+.ktk-btn {
+  // 1. Fondations
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--ktk-radius-sm);
+  transition: var(--ktk-transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  gap: 10px;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+
+  // 2. Style par défaut (Primary)
+  background-color: var(--ktk-primary);
+  color: white;
+  box-shadow: var(--ktk-shadow-sm);
+
+  // 3. Interactions (La Magie Kitoko)
+  &:hover {
+    transform: translateY(-3px); // Lévitation
+    box-shadow: var(--ktk-shadow-md);
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: var(--ktk-shadow-sm);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.3);
+  }
+
+  // 4. Variantes
+  
+  // Variante Secondaire
+  &.ktk-btn-secondary {
+    background-color: var(--ktk-secondary);
+  }
+
+  // Variante Outline (Bordure)
+  &.ktk-btn-outline {
+    background-color: transparent;
+    border-color: var(--ktk-primary);
+    color: var(--ktk-primary);
+
+    &:hover {
+      background-color: var(--ktk-primary);
+      color: white;
+    }
+  }
+
+  // Variante Glass (Effet Verre)
+  &.ktk-btn-glass {
+    background: var(--ktk-glass);
+    backdrop-filter: var(--ktk-blur);
+    -webkit-backdrop-filter: var(--ktk-blur);
+    color: var(--ktk-dark);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  // Tailles
+  &.ktk-btn-sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
+  &.ktk-btn-lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
+}
+
+// Mode Sombre pour la variante Glass
+@media (prefers-color-scheme: dark) {
+  .ktk-btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+}
