@@ -1,0 +1,18 @@
+{
+  "name": "@kitoko/cli",
+  "version": "2.0.0",
+  "description": "L'assistant intelligent pour l'écosystème KitokoCSS",
+  "main": "dist/index.js",
+  "bin": {
+    "kitoko": "./bin/kitoko"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2"
+  }
+}
