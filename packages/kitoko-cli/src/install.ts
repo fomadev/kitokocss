@@ -1,32 +1,62 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import https from 'node:https';
 import pc from 'picocolors';
 
-export async function installModule(moduleName: string) {
-  // 1. Simuler la recherche dans le registre
-  // Dans le futur, on ira chercher sur npm ou un serveur distant
-  const fullPackageName = moduleName.startsWith('kitoko-') ? moduleName : `kitoko-${moduleName}`;
-  
-  console.log(pc.gray(`Recherche de ${fullPackageName} dans le registre Kitoko...`));
+function downloadFile(url: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if (res.statusCode !== 200) {
+        reject(new Error(`Serveur injoignable (Code: ${res.statusCode})`));
+        return;
+      }
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => resolve(data));
+    }).on('error', (err) => reject(err));
+  });
+}
 
-  // 2. Logique d'importation automatique
-  // On va ajouter l'importation dans le fichier scss/kitoko.scss
-  const scssPath = path.resolve(process.cwd(), 'scss/kitoko.scss');
+export async function installModule(moduleName: string) {
+  const root = process.cwd();
   
-  if (fs.existsSync(scssPath)) {
-    const importStatement = `\n@import "../packages/${fullPackageName}/src/${moduleName}";`;
+  const GITHUB_BASE_URL = `https://raw.githubusercontent.com/fomadev/kitokocss/main/packages/kitoko-core/src/components`;
+  const fileUrl = `${GITHUB_BASE_URL}/_${moduleName}.scss`;
+
+  console.log(pc.gray(`Connexion au registre Kitoko Cloud...`));
+
+  try {
+    // 1. Télécharger le contenu
+    const scssContent = await downloadFile(fileUrl);
     
-    // Vérifier si déjà importé
-    const content = fs.readFileSync(scssPath, 'utf8');
-    if (content.includes(importStatement.trim())) {
-      console.log(pc.yellow(`ℹLe module ${moduleName} est déjà présent dans votre bundle.`));
-      return;
+    // 2. Déterminer où enregistrer le fichier
+    // On s'adapte : si on est dans un projet PHP/Django, on crée un dossier "kitoko_modules"
+    const targetDir = fs.existsSync(path.join(root, 'packages')) 
+                      ? path.join(root, 'packages', `kitoko-${moduleName}`, 'src')
+                      : path.join(root, 'kitoko_modules');
+
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
     }
 
-    fs.appendFileSync(scssPath, importStatement);
-    console.log(pc.blue(`Ajout de l'importation dans scss/kitoko.scss`));
-  } else {
-    throw new Error("Fichier scss/kitoko.scss introuvable à la racine.");
+    const targetPath = path.join(targetDir, `_${moduleName}.scss`);
+    fs.writeFileSync(targetPath, scssContent);
+    console.log(pc.green(`Fichier _${moduleName}.scss téléchargé avec succès.`));
+
+    // 3. Liaison au fichier principal
+    const mainScssPath = path.resolve(root, 'scss/kitoko.scss');
+    if (fs.existsSync(mainScssPath)) {
+      const importStatement = `@use "../packages/kitoko-${moduleName}/src/${moduleName}";`;
+      const content = fs.readFileSync(mainScssPath, 'utf8');
+      
+      if (!content.includes(importStatement)) {
+        fs.appendFileSync(mainScssPath, `\n${importStatement}`);
+        console.log(pc.blue(`Importation ajoutée dans kitoko.scss`));
+      }
+    }
+
+  } catch (error: any) {
+    throw new Error(`Le module "${moduleName}" n'existe pas sur le cloud Kitoko. (${error.message})`);
   }
 }

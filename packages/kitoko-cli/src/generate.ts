@@ -22,7 +22,4 @@ export async function generateModule(moduleName: string) {
   
   fs.writeFileSync(filePath, starterCode);
   console.log(pc.gray(`Fichier créé : _${moduleName}.scss`));
-
-  // 3. Optionnel : On peut aussi l'ajouter automatiquement au kitoko.scss principal
-  // comme nous l'avons fait dans install.ts
 }

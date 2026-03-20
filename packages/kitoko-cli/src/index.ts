@@ -1,7 +1,8 @@
 import { Command } from 'commander';
 import pc from 'picocolors';
 import { installModule } from './install.js';
-import { generateModule } from './generate.js'; // Nous allons créer ce fichier
+import { generateModule } from './generate.js';
+import { searchModules } from './search.js';
 
 const program = new Command();
 
@@ -38,6 +39,19 @@ program
       console.log(pc.green(`\nNouveau module ${pc.yellow(moduleName)} créé et prêt à être codé !`));
     } catch (error: any) {
       console.error(pc.red(`\nErreur de génération : ${error.message}`));
+    }
+  });
+
+// COMMANDE 3 : SEARCH
+program
+  .command('search')
+  .description('Lister les modules disponibles sur le Cloud Kitoko')
+  .action(async () => {
+    console.log(pc.cyan(`\nConnexion au registre Kitoko...`));
+    try {
+      await searchModules();
+    } catch (error: any) {
+      console.error(pc.red(`\nImpossible de récupérer la liste : ${error.message}`));
     }
   });
 
