@@ -305,3 +305,69 @@ p, .ktk-text {
     color: rgba(255, 255, 255, 0.7);
   }
 }
+/* KITOKO NAVBAR v2.0.0
+   Une navigation flottante, élégante et intelligente.
+*/
+.ktk-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: var(--ktk-transition);
+  background: var(--ktk-glass);
+  backdrop-filter: var(--ktk-blur);
+  -webkit-backdrop-filter: var(--ktk-blur);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.ktk-navbar .ktk-nav-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--ktk-gap);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ktk-navbar .ktk-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ktk-dark);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ktk-navbar .ktk-logo span {
+  color: var(--ktk-primary);
+}
+.ktk-navbar .ktk-nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .ktk-navbar .ktk-nav-links {
+    display: none;
+  }
+}
+.ktk-navbar .ktk-nav-links a {
+  color: var(--ktk-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: var(--ktk-transition);
+}
+.ktk-navbar .ktk-nav-links a:hover {
+  opacity: 1;
+  color: var(--ktk-primary);
+}
+
+.ktk-navbar-scrolled {
+  height: 60px;
+  box-shadow: var(--ktk-shadow-md);
+  background: var(--ktk-surface);
+}
