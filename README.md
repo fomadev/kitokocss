@@ -1,68 +1,80 @@
-# KitokoCSS v2.0.0
+# KitokoCSS
+> **Design that speaks, code that sings.**
 
-KitokoCSS n'est pas qu'un framework UI. C'est un écosystème conçu pour la performance et la beauté (Kitoko). Basé sur une architecture de micro-modules, il vous permet d'installer uniquement ce dont vous avez besoin.
+**KitokoCSS** is a revolutionary, lightweight, and modular CSS framework designed for speed and beauty. It comes with a powerful **Multi-platform CLI** that works seamlessly across Windows, Linux, and macOS—no Node.js required for end-users.
 
----
+## Why KitokoCSS?
 
-## Pourquoi KitokoCSS ?
+* **Stunning Design Tokens**: Built-in glassmorphism, fluid spacing, and professional shadows.
+* **Auto Dark Mode**: Every component is born ready for the night.
+* **Tech-Agnostic CLI**: Perfect for **PHP (Laravel)**, **Python (Django)**, **Go**, or **Node.js**.
+* **Modular Architecture**: Don't bloat your site. Install only the components you need (e.g., `button`, `navbar`, `card`).
 
-* **Architecture Modulaire :** Importez le `core` et ajoutez des extensions (`navbar`, `cards`, `buttons`) via notre CLI.
-* **Design "Kitoko" :** Un ADN visuel basé sur le Glassmorphism, des ombres colorées et une typographie fluide.
-* **Performance Absolute :** Pas de runtime lourd. Juste du CSS moderne optimisé (Sass + CleanCSS).
-* **Responsive Révolutionnaire :** Un système de grille intelligent qui s'adapte sans Media Queries complexes.
-* **Mode Sombre Natif :** Support automatique basé sur les préférences système.
+## Installation
 
----
+1. Download the CLI
+Download the latest binary for your operating system from the <a href="...">Releases page</a>.
 
-## 🛠 Installation & Setup
+2. Global Setup (Windows)
+Run the `install.bat` included in the zip to add Kitoko to your system PATH.
 
-### 1. Cloner le projet
+3. Initialize your Project
+Navigate to your project folder (any language) and run:
+
 ```bash
-git clone https://github.com/fomadev/kitokocss.git
-cd kitokocss
+kitoko init
 ```
 
-### 2. Installer les dépendances (Workspaces)
-```bash
-npm install
-```
+## CLI Commands
 
-### 3. Compiler le framework
-```bash
-npm run build
-```
+<table border="1">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>kitoko init</code></td>
+      <td>Setup Kitoko config and base SCSS files in your project.</td>
+    </tr>
+    <tr>
+      <td><code>kitoko search</code></td>
+      <td>Browse the Kitoko Cloud for available design modules.</td>
+    </tr>
+    <tr>
+      <td><code>kitoko install &lt;module&gt;</code></td>
+      <td>Download and link a module (e.g., button) to your project.</td>
+    </tr>
+    <tr>
+      <td><code>kitoko generate &lt;name&gt;</code></td>
+      <td>(For Devs) Create a new local module skeleton.</td>
+    </tr>
+  </tbody>
+</table>
 
-## Structure du Framework
-KitokoCSS utilise une structure **Monorepo** pour une modularité maximale :
-
-`packages/kitoko-core` : Les fondations (Variables, Grid, Reset, Typography).
-
-`packages/kitoko-cli` : L'outil de ligne de commande pour gérer vos modules.
-
-`packages/kitoko-components` : Bibliothèque de composants premium.
-
-## Utilisation Rapide
-Voici comment créer une interface magnifique en quelques classes :
+## Example Usage
+Once you've installed a module like `login-form`, simply add the classes to your HTML:
 
 ```html
-<div class="ktk-grid">
-  <div class="ktk-card ktk-glass">
-    <h3 class="ktk-h3">Innovation</h3>
-    <p>Le futur du design web est ici.</p>
-    <button class="ktk-btn">Découvrir</button>
-  </div>
+<div class="ktk-login-card">
+    <h2 class="ktk-h2">Welcome Back</h2>
+    <div class="ktk-form-group">
+        <label>Email</label>
+        <input type="email" placeholder="email@example.com">
+    </div>
+    <button class="ktk-btn ktk-btn-primary">Sign In</button>
 </div>
 ```
 
-## Développement (Scripts)
-`npm run dev` : Lancer le mode watch pour le SCSS.
+## Development
+If you want to contribute to the core or build your own modules:
 
-`npm run build` : Compiler et minifier tout l'écosystème.
+1. Clone the repo.
 
-`npm run clean` : Nettoyer les dossiers de production.
+2. Install dependencies: `npm install`.
 
-## 👨‍💻 Auteur
-<a href="https://github.com/fordimalanda">MOLENGO MALANDA FORDI</a> - Initial work - <a href="https://github.com/fomadev">fomadev</a>
+3. Build the framework: `npm run build`.
 
-# 📄 Licence
-Ce projet est sous licence <a href="LICENCE">MIT</a> - voir le fichier LICENSE pour plus de détails.
+4. Generate a new module: `kitoko g my-new-component`.
