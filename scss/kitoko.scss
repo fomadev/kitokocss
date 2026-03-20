@@ -1,11 +1,11 @@
 // scss/kitoko.scss
 
-// 1. Charger les fondations
+// 1. Fondations (Ordre important)
 @use "../packages/kitoko-core/src/variables" as *;
 @use "../packages/kitoko-core/src/reset";
 @use "../packages/kitoko-core/src/grid";
+@use "../packages/kitoko-core/src/typography";
 
-// 2. Charger les composants
-// Assure-toi que ces fichiers existent physiquement !
+// 2. Composants de base
 @use "../packages/kitoko-core/src/components/buttons";
 @use "../packages/kitoko-core/src/components/cards";

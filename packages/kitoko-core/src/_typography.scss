@@ -1,0 +1,76 @@
+@use "variables" as *;
+
+/* KITOKO TYPOGRAPHY v2.0.0
+   L'art de la lisibilité et de l'élégance textuelle.
+*/
+
+// 1. Titres (Headings) avec tailles fluides via clamp()
+h1, .ktk-h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ktk-dark);
+  margin-bottom: 1.5rem;
+}
+
+h2, .ktk-h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ktk-dark);
+  margin-bottom: 1.25rem;
+}
+
+h3, .ktk-h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ktk-dark);
+}
+
+// 2. Paragraphes et corps de texte
+p, .ktk-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+// 3. Utilitaires de texte
+.ktk-text-primary { color: var(--ktk-primary) !important; }
+.ktk-text-secondary { color: var(--ktk-secondary) !important; }
+.ktk-text-center { text-align: center; }
+.ktk-text-right { text-align: right; }
+.ktk-text-bold { font-weight: 700; }
+.ktk-text-uppercase { text-transform: uppercase; letter-spacing: 0.1em; }
+
+// 4. Liens stylisés
+.ktk-link {
+  color: var(--ktk-primary);
+  font-weight: 600;
+  position: relative;
+  transition: var(--ktk-transition);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--ktk-primary);
+    transition: var(--ktk-transition);
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Mode Sombre
+@media (prefers-color-scheme: dark) {
+  p, .ktk-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
