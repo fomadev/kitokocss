@@ -7,7 +7,7 @@ function downloadFile(url) {
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
             if (res.statusCode !== 200) {
-                reject(new Error(`Serveur injoignable (Code: ${res.statusCode})`));
+                reject(new Error(`Server unreachable (Code: ${res.statusCode})`));
                 return;
             }
             let data = '';
@@ -20,7 +20,7 @@ export async function installModule(moduleName) {
     const root = process.cwd();
     const GITHUB_BASE_URL = `https://raw.githubusercontent.com/fomadev/kitokocss/main/packages/kitoko-core/src/components`;
     const fileUrl = `${GITHUB_BASE_URL}/_${moduleName}.scss`;
-    console.log(pc.gray(`Connexion au registre Kitoko Cloud...`));
+    console.log(pc.gray(`Connecting to the Kitoko Cloud registry...`));
     try {
         // 1. Télécharger le contenu
         const scssContent = await downloadFile(fileUrl);
@@ -34,7 +34,7 @@ export async function installModule(moduleName) {
         }
         const targetPath = path.join(targetDir, `_${moduleName}.scss`);
         fs.writeFileSync(targetPath, scssContent);
-        console.log(pc.green(`Fichier _${moduleName}.scss téléchargé avec succès.`));
+        console.log(pc.green(`File _${moduleName}.scss successfully downloaded.`));
         // 3. Liaison au fichier principal
         const mainScssPath = path.resolve(root, 'scss/kitoko.scss');
         if (fs.existsSync(mainScssPath)) {
@@ -42,12 +42,12 @@ export async function installModule(moduleName) {
             const content = fs.readFileSync(mainScssPath, 'utf8');
             if (!content.includes(importStatement)) {
                 fs.appendFileSync(mainScssPath, `\n${importStatement}`);
-                console.log(pc.blue(`Importation ajoutée dans kitoko.scss`));
+                console.log(pc.blue(`Import added to kitoko.scss`));
             }
         }
     }
     catch (error) {
-        throw new Error(`Le module "${moduleName}" n'existe pas sur le cloud Kitoko. (${error.message})`);
+        throw new Error(`The module "${moduleName}" does not exist on the Kitoko Cloud. (${error.message})`);
     }
 }
 //# sourceMappingURL=install.js.map

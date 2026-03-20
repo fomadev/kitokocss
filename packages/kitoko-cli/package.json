@@ -7,18 +7,35 @@
   "bin": {
     "kitoko": "./bin/kitoko"
   },
+  "pkg": {
+    "assets": [
+      "dist/**/*"
+    ],
+    "targets": [
+      "node18-win-x64",
+      "node18-win-x86",
+      "node18-win-arm64",
+      "node18-linux-x64",
+      "node18-linux-x86",
+      "node18-linux-armv7",
+      "node18-linux-arm64",
+      "node18-linuxstatic-x64",
+      "node18-macos-x64",
+      "node18-macos-arm64",
+      "node18-macos-universal"
+    ]
+  },
   "scripts": {
     "build": "tsc",
     "dev": "node --loader ts-node/esm src/index.ts"
   },
   "dependencies": {
     "commander": "^11.1.0",
-    "install": "^0.13.0",
-    "path": "^0.12.7",
     "picocolors": "^1.0.0",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@types/node": "^20.19.37"
+    "@types/node": "^20.19.37",
+    "pkg": "^5.8.1"
   }
 }

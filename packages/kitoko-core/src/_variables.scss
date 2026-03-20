@@ -42,3 +42,31 @@
     --ktk-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 }
+
+
+/* --- UTILITY CLASSES GENERATOR --- */
+
+// 1. Background colors
+.bg-primary { background-color: var(--ktk-primary) !important; color: white; }
+.bg-surface { background-color: var(--ktk-surface) !important; }
+.bg-glass { background: var(--ktk-glass); backdrop-filter: var(--ktk-blur); }
+
+// 2. Shadows (The Depth)
+.shadow-sm { box-shadow: var(--ktk-shadow-sm); }
+.shadow-md { box-shadow: var(--ktk-shadow-md); }
+.shadow-lg { box-shadow: var(--ktk-shadow-lg); }
+
+// 3. Rounded Corners
+.rounded-sm { border-radius: var(--ktk-radius-sm); }
+.rounded-md { border-radius: var(--ktk-radius-md); }
+.rounded-lg { border-radius: var(--ktk-radius-lg); }
+.rounded-full { border-radius: var(--ktk-radius-round); }
+
+// 4. Interactive Hover (The "Sings" effect)
+.hover-lift {
+  transition: var(--ktk-transition);
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ktk-shadow-lg);
+  }
+}

@@ -30,6 +30,57 @@
     --ktk-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 }
+/* --- UTILITY CLASSES GENERATOR --- */
+.bg-primary {
+  background-color: var(--ktk-primary) !important;
+  color: white;
+}
+
+.bg-surface {
+  background-color: var(--ktk-surface) !important;
+}
+
+.bg-glass {
+  background: var(--ktk-glass);
+  backdrop-filter: var(--ktk-blur);
+}
+
+.shadow-sm {
+  box-shadow: var(--ktk-shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--ktk-shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--ktk-shadow-lg);
+}
+
+.rounded-sm {
+  border-radius: var(--ktk-radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--ktk-radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--ktk-radius-lg);
+}
+
+.rounded-full {
+  border-radius: var(--ktk-radius-round);
+}
+
+.hover-lift {
+  transition: var(--ktk-transition);
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ktk-shadow-lg);
+}
+
 /* Nettoyage Kitoko pour une base saine */
 *, *::before, *::after {
   box-sizing: border-box;

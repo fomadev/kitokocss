@@ -15,7 +15,7 @@ export async function searchModules() {
     res.on('data', (chunk) => data += chunk);
     res.on('end', () => {
       if (res.statusCode !== 200) {
-        console.log(pc.red("Le registre est temporairement indisponible."));
+        console.log(pc.red("The registry is temporarily unavailable."));
         return;
       }
 
@@ -25,13 +25,13 @@ export async function searchModules() {
         .filter((f: any) => f.name.endsWith('.scss'))
         .map((f: any) => f.name.replace('_', '').replace('.scss', ''));
 
-      console.log(pc.white(`\nModules disponibles dans la version 2.0.0 :\n`));
+      console.log(pc.white(`\nModules available in version 2.0.0 :\n`));
       
       modules.forEach((mod: string) => {
         console.log(`${pc.green('→')} ${pc.bold(mod)}`);
       });
 
-      console.log(pc.gray(`\nUtilisez "${pc.cyan('kitoko install <nom>')}" pour en ajouter un.`));
+      console.log(pc.gray(`\nUse "${pc.cyan('kitoko install <name>')}" to add one.`));
     });
   }).on('error', (err) => {
     throw err;

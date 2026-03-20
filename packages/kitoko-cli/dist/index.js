@@ -7,7 +7,7 @@ import { initProject } from './init.js';
 const program = new Command();
 program
     .name('kitoko')
-    .description(`${pc.cyan('✨ KitokoCSS CLI')} - L'assistant intelligent pour un design révolutionnaire`)
+    .description(`${pc.cyan('✨ KitokoCSS CLI')} - The intelligent assistant for a revolutionary design`)
     .version('2.0.0')
     .addHelpText('before', `
 ${pc.bold(pc.magenta('  _  ___ _        _         '))}
@@ -15,64 +15,64 @@ ${pc.bold(pc.magenta(' | |/ (_) |_ ___ | | _____  '))}
 ${pc.bold(pc.magenta(' | \' /| | __/ _ \\| |/ / _ \\ '))}
 ${pc.bold(pc.magenta(' | . \\| | || (_) |   < (_) |'))}
 ${pc.bold(pc.magenta(' |_|\\_\\_|\\__\\___/|_|\\_\\___/ '))}
-  ${pc.italic(pc.gray('Le design qui parle, le code qui chante.'))}
+  ${pc.italic(pc.gray('The design that speaks, the code that sings.'))}
   `);
 // COMMANDE 1 : INSTALL (Pour ce qui existe déjà)
 program
     .command('install')
-    .description('Installer un module existant (depuis le local ou le futur cloud)')
-    .argument('<module>', 'nom du module à installer')
+    .description('Install an existing module (from local storage or the future cloud))')
+    .argument('<module>', 'name of the module to install')
     .action(async (moduleName) => {
     console.log(pc.cyan(`\nRecherche du module : ${pc.bold(moduleName)}...`));
     try {
         await installModule(moduleName);
-        console.log(pc.green(`\nModule ${pc.yellow(moduleName)} installé avec succès.`));
+        console.log(pc.green(`\nModule ${pc.yellow(moduleName)} installed successfully.`));
     }
     catch (error) {
-        console.error(pc.red(`\nErreur : ${error.message}`));
+        console.error(pc.red(`\nError : ${error.message}`));
     }
 });
 // COMMANDE 2 : GENERATE (Pour créer un nouveau truc)
 program
     .command('generate')
     .alias('g') // Permet de faire : kitoko g footer
-    .description('Générer le squelette d\'un nouveau module local')
-    .argument('<module>', 'nom du module à créer')
+    .description('Generate the skeleton of a new local module')
+    .argument('<module>', 'name of the module to create')
     .action(async (moduleName) => {
-    console.log(pc.magenta(`\nGénération du module local : ${pc.bold(moduleName)}...`));
+    console.log(pc.magenta(`\nLocal module generation : ${pc.bold(moduleName)}...`));
     try {
         await generateModule(moduleName);
-        console.log(pc.green(`\nNouveau module ${pc.yellow(moduleName)} créé et prêt à être codé !`));
+        console.log(pc.green(`\nNew module ${pc.yellow(moduleName)} created and ready to be coded!`));
     }
     catch (error) {
-        console.error(pc.red(`\nErreur de génération : ${error.message}`));
+        console.error(pc.red(`\nGeneration error : ${error.message}`));
     }
 });
 // COMMANDE 3 : SEARCH
 program
     .command('search')
-    .description('Lister les modules disponibles sur le Cloud Kitoko')
+    .description('List the available modules on the Kitoko Cloud')
     .action(async () => {
-    console.log(pc.cyan(`\nConnexion au registre Kitoko...`));
+    console.log(pc.cyan(`\nLogin to the Kitoko registry...`));
     try {
         await searchModules();
     }
     catch (error) {
-        console.error(pc.red(`\nImpossible de récupérer la liste : ${error.message}`));
+        console.error(pc.red(`\nUnable to retrieve the list : ${error.message}`));
     }
 });
 // COMMANDE 4 : INIT
 program
     .command('init')
-    .description('Initialiser KitokoCSS dans un nouveau projet (crée la config et les dossiers)')
+    .description('Initialize KitokoCSS in a new project (creates the config and directories)')
     .action(async () => {
-    console.log(pc.magenta(`\nInitialisation de l'écosystème Kitoko...`));
+    console.log(pc.magenta(`\nInitializing the Kitoko ecosystem...`));
     try {
         await initProject();
-        console.log(pc.green(`\nVotre projet est maintenant "Kitoko-Ready" !`));
+        console.log(pc.green(`\nYour project is now "Kitoko-Ready" !`));
     }
     catch (error) {
-        console.error(pc.red(`\nErreur d'initialisation : ${error.message}`));
+        console.error(pc.red(`\nInitialization error : ${error.message}`));
     }
 });
 program.parse();
