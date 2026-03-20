@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import pc from 'picocolors';
-import { installModule } from './install';
+import { installModule } from './install.js';
 
 const program = new Command();
 
