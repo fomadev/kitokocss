@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import process from 'node:process';
+import pc from 'picocolors';
+export async function generateModule(moduleName) {
+    const root = process.cwd();
+    const modulePath = path.join(root, 'packages', `kitoko-${moduleName}`);
+    const srcPath = path.join(modulePath, 'src');
+    const filePath = path.join(srcPath, `_${moduleName}.scss`);
+    // 1. Création des dossiers
+    if (!fs.existsSync(srcPath)) {
+        fs.mkdirSync(srcPath, { recursive: true });
+        console.log(pc.gray(`Dossier créé : packages/kitoko-${moduleName}/src`));
+    }
+    else {
+        throw new Error(`Le module ${moduleName} existe déjà ! Utilisez "install" à la place.`);
+    }
+    // 2. Création du fichier SCSS de base
+    const starterCode = `@use "../../kitoko-core/src/variables" as *;\n\n/* Module ${moduleName.toUpperCase()} - KitokoCSS */\n\n.${moduleName} {\n  // Votre code ici\n}\n`;
+    fs.writeFileSync(filePath, starterCode);
+    console.log(pc.gray(`Fichier créé : _${moduleName}.scss`));
+    // 3. Optionnel : On peut aussi l'ajouter automatiquement au kitoko.scss principal
+    // comme nous l'avons fait dans install.ts
+}
+//# sourceMappingURL=generate.js.map
