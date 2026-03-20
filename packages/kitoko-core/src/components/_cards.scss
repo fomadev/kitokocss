@@ -1,0 +1,65 @@
+@import "../variables";
+
+/* KITOKO CARD v2.0.0
+   Le summum de la profondeur et de l'élégance.
+*/
+
+.ktk-card {
+  background-color: var(--ktk-surface);
+  border-radius: var(--ktk-radius-md);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05); // Une bordure presque invisible
+  box-shadow: var(--ktk-shadow-sm);
+  transition: var(--ktk-transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  // Effet au survol (Lévitation)
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--ktk-shadow-md);
+    border-color: var(--ktk-primary);
+  }
+
+  // Variante Glassmorphism (La Beauté Moderne)
+  &.ktk-glass {
+    background: var(--ktk-glass);
+    backdrop-filter: var(--ktk-blur);
+    -webkit-backdrop-filter: var(--ktk-blur);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  // Structure interne de la carte
+  .ktk-card-image {
+    margin: -1.5rem -1.5rem 0 -1.5rem; // Sortir de la carte pour remplir le haut
+    width: calc(100% + 3rem);
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .ktk-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ktk-dark);
+    margin: 0;
+  }
+
+  .ktk-card-body {
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+// Support Mode Sombre pour la bordure
+@media (prefers-color-scheme: dark) {
+  .ktk-card {
+    border-color: rgba(255, 255, 255, 0.1);
+    
+    .ktk-card-body {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
